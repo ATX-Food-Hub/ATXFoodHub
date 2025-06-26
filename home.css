@@ -51,9 +51,6 @@ body, html {
   border-bottom: 2px solid #ccc;
 }
 
-.logo {
-  font-size: 1.8rem;
-}
 
 .nav-links {
   list-style: none;
@@ -123,3 +120,4 @@ body, html {
   font-weight: normal;
   line-height: 1.4;
 }
+

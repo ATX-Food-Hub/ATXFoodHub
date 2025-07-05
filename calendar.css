@@ -22,7 +22,7 @@ body::before {
   content: "";
   position: fixed;
   inset: 0; /* shorthand for top: 0; right: 0; bottom: 0; left: 0 */
-  background-color: rgba(255, 255, 255, 0.5); /* Adjust transparency here */
+  background-color: rgba(183, 198, 139, 0.5); /* Adjust transparency here */
   z-index: 0;
   pointer-events: none; /* makes sure it doesn't block clicks */
 }
@@ -32,6 +32,11 @@ h1 {
   color: #4c6660;
   text-align: center;
   padding: 20px;
+}
+
+iframe {
+  display: block;
+  margin: 0 auto;
 }
 
 /* Make sure content appears above overlay */

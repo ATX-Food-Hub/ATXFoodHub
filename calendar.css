@@ -48,7 +48,7 @@ iframe {
   max-height: 90vh;
   margin: 5vh auto;
   overflow: hidden;
-  background-color: #646464;
+  background-color: #696969;
   backdrop-filter: blur(4px);
   border-radius: 20px;
   padding: 30px;
@@ -133,14 +133,12 @@ iframe {
 }
 
 .back-home {
-  position: absolute;
-  top: 20px;
-  right: 30px;
+  align-self: flex-end;
+  margin-bottom: 10px;
   color: #e4fc94;
-  font-size: 1rem;
   font-weight: bold;
   text-decoration: none;
-  z-index: 3;
+  font-size: 1rem;
   transition: color 0.2s ease;
 }
 

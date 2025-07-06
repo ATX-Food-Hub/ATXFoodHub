@@ -17,7 +17,7 @@ body, html {
   z-index: 1;
 }
 
-/* Fullscreen semi-transparent white overlay */
+/* Fullscreen semi-transparent green overlay */
 body::before {
   content: "";
   position: fixed;

@@ -21,19 +21,20 @@ body, html {
 body::before {
   content: "";
   position: fixed;
-  inset: 0; /* shorthand for top: 0; right: 0; bottom: 0; left: 0 */
-  background-color: rgba(183, 198, 139, 0.5); /* Adjust transparency here */
+  inset: 0;
+  background-color: rgba(183, 198, 139, 0.5);
   z-index: 0;
-  pointer-events: none; /* makes sure it doesn't block clicks */
+  pointer-events: none;
 }
 
-/* Header and Calendar Styling */
+/* Ensure content layers above overlay */
 h1,
 iframe {
   position: relative;
   z-index: 2;
 }
 
+/* Embedded Google Calendar */
 iframe {
   width: 100%;
   max-width: 700px;
@@ -41,7 +42,7 @@ iframe {
   border: none;
 }
 
-/* Calendar Panel */
+/* Main content panel */
 .calendar-panel {
   max-width: 960px;
   max-height: 90vh;
@@ -50,61 +51,61 @@ iframe {
   background-color: #646464;
   backdrop-filter: blur(4px);
   border-radius: 20px;
-  padding: 20px;
+  padding: 30px;
   box-shadow: 0 8px 24px rgba(0, 0, 0, 0.12);
   z-index: 2;
   position: relative;
   display: flex;
   flex-direction: column;
-  align-items: center;
+  align-items: stretch; /* <-- important: lets children align left */
 }
 
-/* Header section inside calendar panel */
+/* Header: logo and text aligned left */
 .calendar-header {
-  color: #e4fc94;
   display: flex;
   align-items: center;
   gap: 30px;
-  border-bottom: 1px solid rgba(0, 0, 0, 0.1);
-  padding-bottom: 15px;
   margin-bottom: 25px;
-  justify-content: flex-start;
+  padding-bottom: 15px;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.2); /* subtle light line */
   text-align: left;
 }
 
-/* Logo style */
+/* Let text container fill remaining space */
+.calendar-header > div {
+  flex-grow: 1;
+}
+
+/* Logo styling */
 .logo {
   width: 100px;
   height: 100px;
   border-radius: 0;
   object-fit: contain;
-  background-color: #646464; /* fallback */
+  background-color: #696969;
 }
 
-/* Description under title */
-.description {
-  color: #14141c;
-  font-size: 1rem;
-  font-family: 'Georgia', serif;
-}
-
+/* Header text */
 .calendar-header h1 {
   font-size: 2.5rem;
   margin-bottom: 0.5rem;
-  color: #4c6660;
+  color: #e4fc94;
 }
 
+/* Description text */
 .calendar-header .description {
   font-size: 1.1rem;
-  color: #14141c;
+  color: #dcd8d0;
 }
 
+/* Hover effect on the whole panel */
 .calendar-panel:hover {
   box-shadow: 0 12px 30px rgba(0, 0, 0, 0.18);
   transform: translateY(-2px);
   transition: all 0.2s ease;
 }
 
+/* Responsive behavior for mobile */
 @media (max-width: 768px) {
   .calendar-header {
     flex-direction: column;
@@ -112,12 +113,16 @@ iframe {
     text-align: center;
   }
 
+  .calendar-header > div {
+    width: 100%;
+  }
+
   .logo {
     margin-bottom: 15px;
   }
 
   .calendar-panel {
-    padding: 15px;
+    padding: 20px;
     margin: 20px auto;
   }
 
@@ -125,4 +130,21 @@ iframe {
     height: 400px;
     width: 100%;
   }
+}
+
+.back-home {
+  position: absolute;
+  top: 20px;
+  right: 30px;
+  color: #e4fc94;
+  font-size: 1rem;
+  font-weight: bold;
+  text-decoration: none;
+  z-index: 3;
+  transition: color 0.2s ease;
+}
+
+.back-home:hover {
+  color: #c8e664;
+  text-decoration: underline;
 }

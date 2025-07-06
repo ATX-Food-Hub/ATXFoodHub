@@ -36,10 +36,14 @@ iframe {
 
 /* Embedded Google Calendar */
 iframe {
+  display: block;
+  margin: 0 auto; 
   width: 100%;
   max-width: 700px;
   height: 450px;
   border: none;
+  position: relative;
+  z-index: 2;
 }
 
 /* Main content panel */
@@ -133,13 +137,15 @@ iframe {
 }
 
 .back-home {
-  align-self: flex-end;
-  margin-bottom: 10px;
+  position: absolute;
+  top: 20px;
+  right: 30px;
   color: #e4fc94;
   font-weight: bold;
   text-decoration: none;
   font-size: 1rem;
   transition: color 0.2s ease;
+  z-index: 5;
 }
 
 .back-home:hover {

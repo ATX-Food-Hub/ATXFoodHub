@@ -31,10 +31,12 @@ body::before {
 .calendar-panel {
   width: 92%;
   max-width: 1200px;
-  min-height: 80vh;
-  margin: 5vh auto 8vh auto;
+  height: auto;
+  max-height: 85vh;
+  margin: 5vh auto;
   padding: 4rem 3rem;
   border-radius: 16px;
+  overflow-y: auto;
   background-color: #696969;
   backdrop-filter: blur(4px);
   box-shadow: 0 8px 24px rgba(0, 0, 0, 0.12);

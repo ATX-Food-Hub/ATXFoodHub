@@ -31,7 +31,7 @@ body::before {
 .calendar-panel {
   width: 92%;
   max-width: 1200px;
-  min-height: 85vh;
+  min-height: 80vh;
   margin: 5vh auto 8vh auto;
   padding: 4rem 3rem;
   border-radius: 16px;

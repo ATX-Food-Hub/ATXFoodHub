@@ -3,30 +3,34 @@
 <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <link rel="stylesheet" href="home.css" />
+    <link rel="stylesheet" href="calendar.css" />
     <title>Calendar</title>
 </head>
 <body>
-    <div class="map-container">
-    <iframe
-      src="https://umap.openstreetmap.fr/da/map/atx-food-hub_1178661?scaleControl=false&miniMap=false&scrollWheelZoom=false&zoomControl=false&editControl=false&moreControl=false&searchControl=null#13/30.2994/-97.7430"
-      frameborder="0"
-      allowfullscreen
-      class="map"
-    ></iframe>
+  <div class="calendar-panel">
+
+    <!-- NAVBAR INSIDE THE PANEL -->
+    <nav class="navbar">
+      <ul class="nav-links">
+        <li><a href="tutorials.html">TUTORIALS</a></li>
+        <li><a href="https://docs.google.com/forms/d/e/1FAIpQLSch2VEfYH0HOo6nLVtVA80ANG8w2hmjc_D5TfPsYolnSSijPA/viewform?usp=dialog">FORM</a></li>
+        <li><a href="calendar.html">CALENDAR</a></li>
+        <li><a href="projects.html">PROJECTS</a></li>
+      </ul>
+    </nav>
+
+    <!-- HEADER -->
+    <div class="calendar-header">
+      <img src="logozoomed.jpeg" alt="Student Org Logo" class="logo" />
+      <div>
+        <h1>Calendar</h1>
+        <p class="description">Stay up to date on all ATX Food Hub events!</p>
+      </div>
     </div>
 
-    <div class = "Header">
-    <h1> Calendar </h1>
-    </div>
-
-    <iframe src="https://calendar.google.com/calendar/embed?height=600&wkst=1&ctz=America%2FChicago&showPrint=0&showTz=0&title&src=ZjgzYTQ5NDM1NDA4ZDM0NWI3MDcwNGNiODk4M2ExNDM2YWY3YzllNzVmZWE0ZDM2YzFiNWY0ZjAxNzY3OGJlN0Bncm91cC5jYWxlbmRhci5nb29nbGUuY29t&color=%23c0ca33" 
-        style="border-width:0" 
-        width="900" 
-        height="600" 
-        frameborder="0" 
-        scrolling="no">
-    </iframe>
-    
+    <!-- CALENDAR -->
+    <iframe src="https://calendar.google.com/calendar/embed?height=600&wkst=1&ctz=America%2FChicago&showPrint=0&showTz=0&title&src=ZjgzYTQ5NDM1NDA4ZDM0NWI3MDcwNGNiODk4M2ExNDM2YWY3YzllNzVmZWE0ZDM2YzFiNWY0ZjAxNzY3OGJlN0Bncm91cC5jYWxlbmRhci5nb29nbGUuY29t&color=%23c0ca33"
+      frameborder="0" scrolling="no"></iframe>
+  </div>
 </body>
 </html>

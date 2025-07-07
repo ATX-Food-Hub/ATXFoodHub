@@ -27,55 +27,62 @@ body::before {
   pointer-events: none;
 }
 
-/* Ensure content layers above overlay */
-h1,
-iframe {
-  position: relative;
-  z-index: 2;
-}
-
-/* Embedded Google Calendar */
-iframe {
-  display: block;
-  margin: 0 auto; 
-  width: 100%;
-  max-width: 700px;
-  height: 450px;
-  border: none;
-  position: relative;
-  z-index: 2;
-}
-
-/* Main content panel */
+/* Calendar Panel */
 .calendar-panel {
-  max-width: 960px;
-  max-height: 90vh;
+  max-width: 1100px;
+  max-height: 95vh;
   margin: 5vh auto;
   overflow: hidden;
   background-color: #696969;
   backdrop-filter: blur(4px);
   border-radius: 20px;
-  padding: 30px;
+  padding: 40px;
   box-shadow: 0 8px 24px rgba(0, 0, 0, 0.12);
   z-index: 2;
   position: relative;
   display: flex;
   flex-direction: column;
-  align-items: stretch; /* <-- important: lets children align left */
+  align-items: stretch;
 }
 
-/* Header: logo and text aligned left */
+/* Navbar INSIDE the panel */
+.navbar {
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+  margin-bottom: 20px;
+}
+
+.nav-links {
+  list-style: none;
+  display: flex;
+  gap: 2rem;
+}
+
+.nav-links li a {
+  text-decoration: none;
+  color: #e4fc94;
+  font-weight: bold;
+  font-size: 1rem;
+  transition: color 0.2s ease;
+}
+
+.nav-links li a:hover {
+  color: #c8e664;
+  text-decoration: underline;
+}
+
+/* Header: logo and title */
 .calendar-header {
   display: flex;
   align-items: center;
   gap: 30px;
   margin-bottom: 25px;
   padding-bottom: 15px;
-  border-bottom: 1px solid rgba(255, 255, 255, 0.2); /* subtle light line */
+  border-bottom: 1px solid rgba(255, 255, 255, 0.2);
   text-align: left;
 }
 
-/* Let text container fill remaining space */
 .calendar-header > div {
   flex-grow: 1;
 }
@@ -96,20 +103,31 @@ iframe {
   color: #e4fc94;
 }
 
-/* Description text */
 .calendar-header .description {
   font-size: 1.1rem;
   color: #dcd8d0;
 }
 
-/* Hover effect on the whole panel */
+/* Centered calendar */
+iframe {
+  display: block;
+  margin: 0 auto;
+  width: 100%;
+  max-width: 850px;
+  height: 550px;
+  border: none;
+  position: relative;
+  z-index: 2;
+}
+
+/* Hover effect */
 .calendar-panel:hover {
   box-shadow: 0 12px 30px rgba(0, 0, 0, 0.18);
   transform: translateY(-2px);
   transition: all 0.2s ease;
 }
 
-/* Responsive behavior for mobile */
+/* Mobile Responsive */
 @media (max-width: 768px) {
   .calendar-header {
     flex-direction: column;
@@ -134,21 +152,10 @@ iframe {
     height: 400px;
     width: 100%;
   }
-}
 
-.back-home {
-  position: absolute;
-  top: 20px;
-  right: 30px;
-  color: #e4fc94;
-  font-weight: bold;
-  text-decoration: none;
-  font-size: 1rem;
-  transition: color 0.2s ease;
-  z-index: 5;
-}
-
-.back-home:hover {
-  color: #c8e664;
-  text-decoration: underline;
+  .nav-links {
+    flex-direction: column;
+    align-items: flex-end;
+    gap: 10px;
+  }
 }

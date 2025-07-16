@@ -164,11 +164,26 @@ iframe {
 }
 
 footer {
-  background-color: #4f4f4f;
-  color: #f2f2f2;
-  padding: 15px 25px;
-  font-size: 0.9rem;
-  line-height: 1.5;
+  color: #dcd8d0;
   text-align: left;
+  padding-top: 20px;
+  padding-bottom: 10px;
+  font-size: 0.95rem;
+}
+
+footer a {
+  color: #e4fc94;
+  text-decoration: none;
+}
+
+footer a:hover {
+  text-decoration: underline;
+  color: #c8e664;
+}
+
+hr {
+  border: none;
   border-top: 1px solid rgba(255, 255, 255, 0.2);
+  margin-top: 40px;
+  margin-bottom: 20px;
 }

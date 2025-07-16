@@ -29,7 +29,7 @@ body, html {
 
 /* Overlay Panel (Main Card) */
 .overlay {
-  background: #e0f5e9; /* Mint green */
+  background-color: #696969;
   padding: 4rem 3rem;
   width: 92%;
   max-width: 1200px;
@@ -74,13 +74,13 @@ body, html {
 .content h1 {
   font-size: 2.8rem;
   line-height: 1.2;
-  color: #183d2c;
+  color: #e4fc94;
 }
 
 .content p {
   font-size: 1.1rem;
   margin-top: 1rem;
-  color: #2f4f3e;
+  color: #e4fc94;
 }
 
 /* Cards Section */

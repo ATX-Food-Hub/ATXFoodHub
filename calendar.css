@@ -154,7 +154,6 @@ iframe {
   iframe {
     height: 400px;
     width: 100%;
-    margin-bottom: 30px;
   }
 
   .nav-links {
@@ -164,19 +163,12 @@ iframe {
   }
 }
 
-/* Style the <hr> */
-hr {
-  border: none;
-  border-top: 1px solid rgba(255, 255, 255, 0.2); 
-  margin: 0 0 10px 0;
-}
-
-/* Style the footer */
 footer {
-  text-align: left;
-  color: #dcd8d0;
+  background-color: #4f4f4f;
+  color: #f2f2f2;
+  padding: 15px 25px;
   font-size: 0.9rem;
   line-height: 1.5;
-  margin-left: 0;
-  padding: 0 10px;
+  text-align: left;
+  border-top: 1px solid rgba(255, 255, 255, 0.2);
 }

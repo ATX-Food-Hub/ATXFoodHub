@@ -33,7 +33,7 @@ body::before {
   max-width: 1200px;
   min-height: 85vh;
   margin: 5vh auto 5vh auto;
-  padding: 30px 40px;
+  padding: 30px 40px 15px 40px;
   background-color: #696969;
   backdrop-filter: blur(4px);
   border-radius: 20px;
@@ -117,7 +117,7 @@ iframe {
   margin: 0 auto;
   width: 100%;
   max-width: 850px;
-  height: 550px;
+  height: 560px;
   border: none;
   position: relative;
   z-index: 2;
@@ -167,7 +167,7 @@ footer {
   color: #dcd8d0;
   text-align: left;
   padding-top: 5px;
-  padding-bottom: 10px;
+  padding-bottom: 5px;
   font-size: 0.95rem;
 }
 

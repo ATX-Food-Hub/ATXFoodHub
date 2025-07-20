@@ -39,7 +39,7 @@ body {
 .panel {
   max-width: 1200px;
   width: 92%;
-  background-color: rgba(105, 105, 105, 0.9);
+  background-color: #696969;
   backdrop-filter: blur(4px);
   border-radius: 20px;
   padding: 40px 40px 60px 40px;
@@ -118,8 +118,8 @@ body {
 .card {
   flex: 1;
   min-width: 240px;
-  background-color: #183d2c;
-  color: #fff;
+  background-color: #e4fc94;
+  color: #000000;
   text-decoration: none;
   padding: 2rem 1rem;
   border-radius: 10px;
@@ -196,4 +196,18 @@ hr {
   .map-wrapper {
     height: 450px;
   }
+}
+
+.logo img {
+  width: 100px;
+  height: 100px;
+  object-fit: contain;
+  background-color: transparent;
+  border-radius: 0;
+  display: block;
+}
+
+.description a {
+  color: #e4fc94; /* mint green from your footer links */
+  text-decoration: underline; /* optional, for clarity */
 }

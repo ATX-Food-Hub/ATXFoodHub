@@ -28,11 +28,15 @@ body::before {
   pointer-events: none;
 }
 
-/* Overlay Panel (Main Card) */
-.overlay {
-  background: #e0f5e9; /* Mint green */
-  padding: 4rem 3rem;
-  width: 92%;
+body {
+  padding: 2rem 1rem;
+  margin: 0;
+  position: relative;
+  z-index: 1;
+}
+
+/* Panel styling */
+.panel {
   max-width: 1200px;
   width: 92%;
   background-color: #696969;
@@ -83,16 +87,24 @@ body::before {
   margin-bottom: 0.5rem;
 }
 
-.content h1 {
-  font-size: 2.8rem;
-  line-height: 1.2;
-  color: #183d2c;
+.header .description {
+  color: #dcd8d0;
+  font-size: 1.1rem;
 }
 
-.content p {
-  font-size: 1.1rem;
-  margin-top: 1rem;
-  color: #2f4f3e;
+/* Map wrapper inside panel */
+.map-wrapper {
+  width: 100%;
+  height: 600px;  /* made taller */
+  border-radius: 15px;
+  overflow: hidden;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.2);
+}
+
+.map {
+  width: 100%;
+  height: 100%;
+  border: none;
 }
 
 /* Cards section */

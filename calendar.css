@@ -32,8 +32,8 @@ body::before {
   width: 92%;
   max-width: 1200px;
   min-height: 85vh;
-  margin: 5vh auto 8vh auto;
-  padding: 30px 40px;
+  margin: 5vh auto 5vh auto;
+  padding: 30px 40px 15px 40px;
   background-color: #696969;
   backdrop-filter: blur(4px);
   border-radius: 20px;
@@ -161,4 +161,29 @@ iframe {
     align-items: flex-end;
     gap: 10px;
   }
+}
+
+footer {
+  color: #dcd8d0;
+  text-align: left;
+  padding-top: 5px;
+  padding-bottom: 5px;
+  font-size: 0.95rem;
+}
+
+footer a {
+  color: #e4fc94;
+  text-decoration: none;
+}
+
+footer a:hover {
+  text-decoration: underline;
+  color: #c8e664;
+}
+
+hr {
+  border: none;
+  border-top: 1px solid rgba(255, 255, 255, 0.2);
+  margin-top: 15px;
+  margin-bottom: 15px;
 }

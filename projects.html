@@ -3,49 +3,11 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>About | ATX Food Hub</title>
+  <title>Projects | ATX Food Hub</title>
   <link rel="stylesheet" href="index.css" />
-  <style>
-    .content h2 {
-      margin-top: 2rem;
-      margin-bottom: 1rem;
-      font-size: 1.6rem;
-      color: #183d2c;
-    }
-
-    .content h3 {
-      margin-top: 1.5rem;
-      margin-bottom: 0.5rem;
-      font-size: 1.3rem;
-      color: #2f4f3e;
-    }
-
-    .content p, .content ul {
-      margin-bottom: 1.25rem;
-      color: #2f4f3e;
-    }
-
-    .content ul {
-      padding-left: 1.5rem;
-      list-style-type: disc;
-    }
-
-    .content li {
-      margin-bottom: 0.5rem;
-    }
-  </style>
 </head>
 <body>
-  <div class="map-container">
-    <iframe
-      src="https://umap.openstreetmap.fr/da/map/atx-food-hub_1178661?scaleControl=false&miniMap=false&scrollWheelZoom=false&zoomControl=false&editControl=false&moreControl=false&searchControl=null#13/30.2994/-97.7430"
-      frameborder="0"
-      allowfullscreen
-      class="map"
-    ></iframe>
-  </div>
-
-  <div class="overlay">
+  <div class="panel">
     <nav class="navbar">
       <div class="logo">
         <img src="IMG_3095.jpeg" alt="ATX Food Hub Logo" width="50" height="50">
@@ -58,14 +20,24 @@
       </ul>
     </nav>
 
-    <main class="content">
-      <h1>About ATX Food Hub</h1>
-      <p>ATX Food Hub is a student-driven initiative focused on making food access resources visible, accessible, and community-driven. Through mapping, research, outreach, and peer support, we are tackling food insecurity head-on.</p>
+    <div class="header">
+      <h1>Our Projects & Committees</h1>
+      <p class="description">ATX Food Hub is a student-led initiative using mapping, outreach, and research to improve food access in Austin.</p>
+    </div>
 
+    <div class="map-wrapper">
+      <iframe
+        src="https://umap.openstreetmap.fr/da/map/atx-food-hub_1178661?scaleControl=false&miniMap=false&scrollWheelZoom=false&zoomControl=false&editControl=false&moreControl=false&searchControl=null#13/30.2994/-97.7430"
+        frameborder="0"
+        allowfullscreen
+        class="map"
+      ></iframe>
+    </div>
+
+    <section class="content">
       <h2>Our Committees</h2>
 
       <h3>Outreach & Engagement</h3>
-      <p>This committee spreads awareness of our resources and implements projects like:</p>
       <ul>
         <li>Anti-theft garden pantry pilot</li>
         <li>Launching a new community garden at Kenny Dorham’s Backyard</li>
@@ -74,7 +46,6 @@
       </ul>
 
       <h3>Research</h3>
-      <p>This team evaluates the map’s impact and contributes to data-driven improvements by:</p>
       <ul>
         <li>Partnering with UT faculty to design studies and collect data</li>
         <li>Analyzing map use trends and user behavior</li>
@@ -82,7 +53,6 @@
       </ul>
 
       <h3>Map Improvement</h3>
-      <p>This committee ensures the map stays accurate and intuitive. Key projects include:</p>
       <ul>
         <li>Adding transportation routes and food details</li>
         <li>Embedding chatbot and tutorials</li>
@@ -97,15 +67,15 @@
         <li>Connections with community orgs and faculty mentors</li>
         <li>Opportunities to publish, present, and build your resume</li>
       </ul>
-    </main>
+    </section>
+
     <hr>
     <footer>
-    <p>Est. 2024 | All rights reserved.</p>
-    <address>
-      
-      Contact us at: <a href="mailto:atxfoodhub@gmail.com">atxfoodhub@gmail.com</a>
-    </address>
-  </footer>
+      <p>Est. 2024 | All rights reserved.</p>
+      <address>
+        Contact us at: <a href="mailto:atxfoodhub@gmail.com">atxfoodhub@gmail.com</a>
+      </address>
+    </footer>
   </div>
 </body>
 </html>

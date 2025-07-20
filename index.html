@@ -2,23 +2,17 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title>Community Map</title>
   <link rel="stylesheet" href="index.css" />
 </head>
 <body>
-  <div class="map-container">
-    <iframe
-      src="https://umap.openstreetmap.fr/da/map/atx-food-hub_1178661?scaleControl=false&miniMap=false&scrollWheelZoom=false&zoomControl=false&editControl=false&moreControl=false&searchControl=null#13/30.2994/-97.7430"
-      frameborder="0"
-      allowfullscreen
-      class="map"
-    ></iframe>
-  </div>
 
-  <div class="overlay">
+  <div class="panel">
     <nav class="navbar">
-      <div class="logo"> <img src = "IMG_3095.jpeg"  alt = "Site Logo" width = "50" height = "50"> </div>
+      <div class="logo">
+        <img src="IMG_3095.jpeg" alt="Site Logo" width="50" height="50" />
+      </div>
       <ul class="nav-links">
         <li><a href="tutorials.html">TUTORIALS</a></li>
         <li><a href="https://docs.google.com/forms/d/e/1FAIpQLSch2VEfYH0HOo6nLVtVA80ANG8w2hmjc_D5TfPsYolnSSijPA/viewform?usp=dialog">FORM</a></li>
@@ -27,33 +21,43 @@
       </ul>
     </nav>
 
-    <main class="content">
+    <div class="header">
       <h1>Help Grow Our <br>Community Map!</h1>
-      <p>Use the form below to share food access updates, garden resources, and more.</p>
+      <p class="description">Use the form below to share food access updates, garden resources, and more.</p>
+    </div>
 
-      <div class="cards">
-        <a href="about.html" class="card">
-          <div class="icon">📍</div>
-          <h3>ABOUT</h3>
-        </a>
-        <a href="#" class="card">
-          <div class="icon">📌</div>
-          <h3>HOW TO USE MAP &<br>CONTRIBUTE</h3>
-        </a>
-        <a href="calendar.html" class="card">
-          <div class="icon">🖼️</div>
-          <h3>UPCOMING EVENTS &<br>MEETUPS</h3>
-        </a>
-      </div>
-    </main>
-    <hr>
+    <div class="map-wrapper">
+      <iframe
+        src="https://umap.openstreetmap.fr/da/map/atx-food-hub_1178661?scaleControl=false&miniMap=false&scrollWheelZoom=false&zoomControl=false&editControl=false&moreControl=false&searchControl=null#13/30.2994/-97.7430"
+        frameborder="0"
+        allowfullscreen
+        class="map"
+      ></iframe>
+    </div>
+
+    <div class="cards">
+      <a href="about.html" class="card">
+        <div class="icon">📍</div>
+        <h3>ABOUT</h3>
+      </a>
+      <a href="#" class="card">
+        <div class="icon">📌</div>
+        <h3>HOW TO USE MAP &<br>CONTRIBUTE</h3>
+      </a>
+      <a href="calendar.html" class="card">
+        <div class="icon">🖼️</div>
+        <h3>UPCOMING EVENTS &<br>MEETUPS</h3>
+      </a>
+    </div>
+
+    <hr />
     <footer>
-    <p>Est. 2024 | All rights reserved.</p>
-    <address>
-      
-      Contact us at: <a href="mailto:atxfoodhub@gmail.com">atxfoodhub@gmail.com</a>
-    </address>
-  </footer>
+      <p>Est. 2024 | All rights reserved.</p>
+      <address>
+        Contact us at: <a href="mailto:atxfoodhub@gmail.com">atxfoodhub@gmail.com</a>
+      </address>
+    </footer>
   </div>
+
 </body>
 </html>

@@ -6,16 +6,36 @@
   <title>Projects | ATX Food Hub</title>
   <link rel="stylesheet" href="index.css" />
   <style>
+    body, html {
+      height: 100%;
+      margin: 0;
+    }
+
+    .panel {
+      display: flex;
+      flex-direction: column;
+      min-height: 100vh;
+    }
+
     .slide-wrapper {
+      flex-grow: 1;
+      display: flex;
+      justify-content: center;
+      align-items: center;
       position: relative;
-      overflow: hidden;
-      min-height: 300px;
-      margin-top: 2rem;
+      padding: 2rem;
     }
 
     .slide-section {
       display: none;
+      max-width: 800px;
+      width: 90%;
+      background-color: rgba(24, 61, 44, 0.85);
+      border-radius: 20px;
+      padding: 2.5rem 3rem;
+      box-shadow: 0 10px 40px rgba(0, 0, 0, 0.3);
       animation: fadeIn 0.5s ease-in-out;
+      color: #fff;
     }
 
     .slide-section.active {
@@ -27,17 +47,30 @@
       to { opacity: 1; transform: translateX(0); }
     }
 
+    .slide-section h2 {
+      font-size: 2rem;
+      color: #e4fc94;
+      margin-bottom: 1rem;
+    }
+
+    .slide-section ul {
+      font-size: 1.2rem;
+      padding-left: 1.5rem;
+      margin-top: 0.5rem;
+    }
+
     .arrow-nav {
       display: flex;
-      justify-content: space-between;
+      justify-content: center;
       align-items: center;
-      margin: 2rem 0;
+      margin: 2rem 0 1rem;
+      gap: 2rem;
     }
 
     .arrow-btn {
       background-color: transparent;
       border: none;
-      font-size: 2rem;
+      font-size: 2.5rem;
       color: #e4fc94;
       cursor: pointer;
       transition: transform 0.2s ease;
@@ -49,17 +82,43 @@
     }
 
     .slide-indicator {
-      text-align: center;
       color: #dcd8d0;
-      font-size: 1rem;
+      font-size: 1.1rem;
     }
 
-    .content h2, .content h3 {
+    .header {
+      text-align: center;
+      margin-top: 2rem;
+    }
+
+    .header h1 {
+      font-size: 2.4rem;
       color: #e4fc94;
+      margin-bottom: 0.5rem;
     }
 
-    .content ul {
-      padding-left: 1.5rem;
+    .header .description {
+      color: #dcd8d0;
+      font-size: 1.2rem;
+      margin-bottom: 1rem;
+    }
+
+    @media (max-width: 768px) {
+      .slide-section {
+        padding: 1.5rem;
+      }
+
+      .slide-section h2 {
+        font-size: 1.6rem;
+      }
+
+      .slide-section ul {
+        font-size: 1rem;
+      }
+
+      .arrow-btn {
+        font-size: 2rem;
+      }
     }
   </style>
 </head>
@@ -79,10 +138,10 @@
 
     <div class="header">
       <h1>ATX Food Hub Projects</h1>
-      <p class="description">Use the arrows below to explore each committee’s work — just like a Genially slideshow!</p>
+      <p class="description">Use the arrows to browse through our committee projects — just like a Genially slide deck!</p>
     </div>
 
-    <div class="slide-wrapper content">
+    <div class="slide-wrapper">
       <div class="slide-section active">
         <h2>Outreach & Engagement</h2>
         <ul>

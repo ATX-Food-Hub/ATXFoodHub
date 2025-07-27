@@ -9,15 +9,14 @@
     body, html {
       height: 100%;
       margin: 0;
+      background-color: #444;
     }
-
 
     .panel {
       display: flex;
       flex-direction: column;
       min-height: 100vh;
     }
-
 
     .slide-wrapper {
       flex-grow: 1;
@@ -28,12 +27,11 @@
       padding: 2rem;
     }
 
-
     .slide-section {
       display: none;
       max-width: 800px;
       width: 90%;
-      background-color: rgba(24, 61, 44, 0.85);
+      background-color: rgba(24, 61, 44, 0.9);
       border-radius: 20px;
       padding: 2.5rem 3rem;
       box-shadow: 0 10px 40px rgba(0, 0, 0, 0.3);
@@ -41,17 +39,14 @@
       color: #fff;
     }
 
-
     .slide-section.active {
       display: block;
     }
-
 
     @keyframes fadeIn {
       from { opacity: 0; transform: translateX(30px); }
       to { opacity: 1; transform: translateX(0); }
     }
-
 
     .slide-section h2 {
       font-size: 2rem;
@@ -59,22 +54,19 @@
       margin-bottom: 1rem;
     }
 
-
     .slide-section ul {
       font-size: 1.2rem;
       padding-left: 1.5rem;
       margin-top: 0.5rem;
     }
 
-
     .arrow-nav {
       display: flex;
       justify-content: center;
       align-items: center;
-      margin: 2rem 0 1rem;
+      margin: 1.5rem 0;
       gap: 2rem;
     }
-
 
     .arrow-btn {
       background-color: transparent;
@@ -85,24 +77,20 @@
       transition: transform 0.2s ease;
     }
 
-
     .arrow-btn:hover {
       transform: scale(1.2);
       color: #c8e664;
     }
-
 
     .slide-indicator {
       color: #dcd8d0;
       font-size: 1.1rem;
     }
 
-
     .header {
       text-align: center;
       margin-top: 2rem;
     }
-
 
     .header h1 {
       font-size: 2.4rem;
@@ -110,29 +98,37 @@
       margin-bottom: 0.5rem;
     }
 
-
     .header .description {
       color: #dcd8d0;
       font-size: 1.2rem;
       margin-bottom: 1rem;
     }
 
+    footer {
+      text-align: center;
+      padding: 1rem;
+      font-size: 0.95rem;
+      color: #dcd8d0;
+    }
+
+    footer a {
+      color: #e4fc94;
+      font-style: italic;
+      text-decoration: none;
+    }
 
     @media (max-width: 768px) {
       .slide-section {
         padding: 1.5rem;
       }
 
-
       .slide-section h2 {
         font-size: 1.6rem;
       }
 
-
       .slide-section ul {
         font-size: 1rem;
       }
-
 
       .arrow-btn {
         font-size: 2rem;
@@ -154,12 +150,10 @@
       </ul>
     </nav>
 
-
     <div class="header">
       <h1>ATX Food Hub Projects</h1>
       <p class="description">Use the arrows to browse through our committee projects — just like a Genially slide deck!</p>
     </div>
-
 
     <div class="slide-wrapper">
       <div class="slide-section active">
@@ -172,7 +166,6 @@
         </ul>
       </div>
 
-
       <div class="slide-section">
         <h2>Research</h2>
         <ul>
@@ -181,7 +174,6 @@
           <li>Presenting findings at conferences</li>
         </ul>
       </div>
-
 
       <div class="slide-section">
         <h2>Map Improvement</h2>
@@ -192,7 +184,7 @@
           <li>Sending update newsletters</li>
         </ul>
       </div>
-
+    </div>
 
     <div class="arrow-nav">
       <button class="arrow-btn" onclick="prevSlide()">&#8592;</button>
@@ -200,8 +192,6 @@
       <button class="arrow-btn" onclick="nextSlide()">&#8594;</button>
     </div>
 
-
-    <hr>
     <footer>
       <p>Est. 2024 | All rights reserved.</p>
       <address>
@@ -210,12 +200,10 @@
     </footer>
   </div>
 
-
   <script>
     const slides = document.querySelectorAll('.slide-section');
     const indicator = document.getElementById('slide-indicator');
     let currentSlide = 0;
-
 
     function showSlide(index) {
       slides.forEach((slide, i) => {
@@ -224,12 +212,10 @@
       indicator.textContent = `${index + 1} / ${slides.length}`;
     }
 
-
     function nextSlide() {
       currentSlide = (currentSlide + 1) % slides.length;
       showSlide(currentSlide);
     }
-
 
     function prevSlide() {
       currentSlide = (currentSlide - 1 + slides.length) % slides.length;
@@ -238,6 +224,3 @@
   </script>
 </body>
 </html>
-
-
-

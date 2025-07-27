@@ -5,15 +5,59 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Projects | ATX Food Hub</title>
   <link rel="stylesheet" href="index.css" />
+  <style>
+    .slide-buttons {
+      display: flex;
+      justify-content: center;
+      gap: 1rem;
+      margin: 2rem 0 1rem;
+    }
+
+    .slide-buttons button {
+      background-color: #183d2c;
+      color: #e4fc94;
+      border: none;
+      padding: 10px 16px;
+      font-size: 1rem;
+      border-radius: 8px;
+      cursor: pointer;
+      transition: background-color 0.3s ease;
+    }
+
+    .slide-buttons button:hover {
+      background-color: #2f4f3e;
+    }
+
+    .slide-section {
+      display: none;
+      animation: fadeIn 0.6s ease-in-out;
+    }
+
+    .slide-section.active {
+      display: block;
+    }
+
+    @keyframes fadeIn {
+      from { opacity: 0; transform: translateY(20px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+
+    .content ul {
+      padding-left: 1.5rem;
+    }
+
+    .content h2, .content h3 {
+      color: #e4fc94;
+    }
+  </style>
 </head>
 <body>
   <div class="panel">
     <nav class="navbar">
       <div class="logo">
-        <img src="logozoomed.jpeg" alt="ATX Food Hub Logo" width="50" height="50">
+        <img src="IMG_3095.jpeg" alt="ATX Food Hub Logo" width="50" height="50">
       </div>
       <ul class="nav-links">
-        <li><a href="index.html">HOME</a></li>
         <li><a href="tutorials.html">TUTORIALS</a></li>
         <li><a href="https://docs.google.com/forms/d/e/1FAIpQLSch2VEfYH0HOo6nLVtVA80ANG8w2hmjc_D5TfPsYolnSSijPA/viewform?usp=dialog">FORM</a></li>
         <li><a href="calendar.html">CALENDAR</a></li>
@@ -22,43 +66,56 @@
     </nav>
 
     <div class="header">
-      <h1>Our Projects & Committees</h1>
-      <p class="description">ATX Food Hub is a student-led initiative using mapping, outreach, and research to improve food access in Austin.</p>
+      <h1>ATX Food Hub Committees</h1>
+      <p class="description">Click through each tab to explore our different focus areas!</p>
+    </div>
+
+    <div class="slide-buttons">
+      <button onclick="showSlide(0)">Outreach</button>
+      <button onclick="showSlide(1)">Research</button>
+      <button onclick="showSlide(2)">Map</button>
+      <button onclick="showSlide(3)">What You’ll Gain</button>
     </div>
 
     <section class="content">
-      <h2>Our Committees</h2>
+      <div class="slide-section active">
+        <h2>Outreach & Engagement</h2>
+        <ul>
+          <li>Anti-theft garden pantry pilot</li>
+          <li>New community garden at Kenny Dorham’s Backyard</li>
+          <li>SNAP Peer Support with UT Outpost</li>
+          <li>Social media & events to destigmatize food insecurity</li>
+        </ul>
+      </div>
 
-      <h3>Outreach & Engagement</h3>
-      <ul>
-        <li>Anti-theft garden pantry pilot</li>
-        <li>Launching a new community garden at Kenny Dorham’s Backyard</li>
-        <li>SNAP Peer Support with UT Outpost</li>
-        <li>Social media, class presentations, and event tabling to destigmatize food insecurity</li>
-      </ul>
+      <div class="slide-section">
+        <h2>Research</h2>
+        <ul>
+          <li>Partnering with UT faculty to design studies</li>
+          <li>Analyzing map use and user behavior</li>
+          <li>Presenting findings at conferences</li>
+        </ul>
+      </div>
 
-      <h3>Research</h3>
-      <ul>
-        <li>Partnering with UT faculty to design studies and collect data</li>
-        <li>Analyzing map use trends and user behavior</li>
-        <li>Presenting findings at conferences</li>
-      </ul>
+      <div class="slide-section">
+        <h2>Map Improvement</h2>
+        <ul>
+          <li>Adding transportation routes & detailed info</li>
+          <li>Embedding chatbot and tutorials</li>
+          <li>Improving layout & usability</li>
+          <li>Sending update newsletters</li>
+        </ul>
+      </div>
 
-      <h3>Map Improvement</h3>
-      <ul>
-        <li>Adding transportation routes and food details</li>
-        <li>Embedding chatbot and tutorials</li>
-        <li>Simplifying layout and improving usability</li>
-        <li>Creating update newsletters</li>
-      </ul>
-
-      <h2>What You’ll Gain</h2>
-      <ul>
-        <li>Hands-on experience in outreach, research, and digital mapping</li>
-        <li>Leadership and project management opportunities</li>
-        <li>Connections with community orgs and faculty mentors</li>
-        <li>Opportunities to publish, present, and build your resume</li>
-      </ul>
+      <div class="slide-section">
+        <h2>What You’ll Gain</h2>
+        <ul>
+          <li>Experience in outreach, research, mapping</li>
+          <li>Leadership and project management skills</li>
+          <li>Connections with orgs & mentors</li>
+          <li>Opportunities to publish, present, and build your resume</li>
+        </ul>
+      </div>
     </section>
 
     <hr>
@@ -69,5 +126,15 @@
       </address>
     </footer>
   </div>
+
+  <script>
+    const slides = document.querySelectorAll('.slide-section');
+
+    function showSlide(index) {
+      slides.forEach((slide, i) => {
+        slide.classList.toggle('active', i === index);
+      });
+    }
+  </script>
 </body>
 </html>

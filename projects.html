@@ -31,12 +31,18 @@
       display: none;
       max-width: 800px;
       width: 90%;
-      background-color: rgba(24, 61, 44, 0.9);
+      min-height: 400px;
+      background-size: cover;
+      background-position: center;
+      background-repeat: no-repeat;
+      background-blend-mode: lighten;
+      background-color: rgba(255,255,255,0.8); /* semi-transparent overlay */
       border-radius: 20px;
-      padding: 2.5rem 3rem;
+      padding: 3.5rem 3rem;
       box-shadow: 0 10px 40px rgba(0, 0, 0, 0.3);
       animation: fadeIn 0.5s ease-in-out;
-      color: #fff;
+      color: #444;
+      overflow-y: auto;
     }
 
     .slide-section.active {
@@ -50,14 +56,19 @@
 
     .slide-section h2 {
       font-size: 2rem;
-      color: #e4fc94;
-      margin-bottom: 1rem;
+      color: #696969;
+      margin-bottom: 1.5rem;
     }
 
     .slide-section ul {
       font-size: 1.2rem;
       padding-left: 1.5rem;
       margin-top: 0.5rem;
+    }
+
+    .slide-section ul li {
+      margin-bottom: 0.9rem;
+      line-height: 1.5;
     }
 
     .arrow-nav {
@@ -119,7 +130,8 @@
 
     @media (max-width: 768px) {
       .slide-section {
-        padding: 1.5rem;
+        padding: 2.5rem 1.5rem;
+        min-height: 300px;
       }
 
       .slide-section h2 {
@@ -128,6 +140,10 @@
 
       .slide-section ul {
         font-size: 1rem;
+      }
+
+      .slide-section ul li {
+        margin-bottom: 0.7rem;
       }
 
       .arrow-btn {
@@ -140,7 +156,7 @@
   <div class="panel">
     <nav class="navbar">
       <div class="logo">
-        <img src="IMG_3095.jpeg" alt="ATX Food Hub Logo" width="50" height="50">
+        <img src="logozoomed.jpeg" alt="ATX Food Hub Logo" width="50" height="50" />
       </div>
       <ul class="nav-links">
         <li><a href="index.html">HOME</a></li>
@@ -153,11 +169,11 @@
 
     <div class="header">
       <h1>ATX Food Hub Projects</h1>
-      <p class="description">Use the arrows to browse through our committee projects — just like a Genially slide deck!</p>
+      <p class="description">Use the arrows to browse through our committee projects!</p>
     </div>
 
     <div class="slide-wrapper">
-      <div class="slide-section active">
+      <div class="slide-section active" style="background-image: url('mapbackground.jpeg');">
         <h2>Outreach & Engagement</h2>
         <ul>
           <li>Anti-theft garden pantry pilot</li>
@@ -167,7 +183,7 @@
         </ul>
       </div>
 
-      <div class="slide-section">
+      <div class="slide-section" style="background-image: url('mapbackground.jpeg');">
         <h2>Research</h2>
         <ul>
           <li>Partnering with UT faculty to design studies</li>
@@ -176,11 +192,11 @@
         </ul>
       </div>
 
-      <div class="slide-section">
+      <div class="slide-section" style="background-image: url('mapbackground.jpeg');">
         <h2>Map Improvement</h2>
         <ul>
-          <li>Adding transportation routes & detailed info</li>
-          <li>Embedding chatbot and tutorials</li>
+          <li>Continuously adding transportation routes & detailed info</li>
+          <li>Embedding chatbot and tutorials into our website</li>
           <li>Improving layout & usability</li>
           <li>Sending update newsletters</li>
         </ul>

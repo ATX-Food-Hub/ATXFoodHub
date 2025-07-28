@@ -164,9 +164,10 @@ footer a:hover {
   text-decoration: underline;
 }
 
+
 hr {
   border: none;
-  border-top: 1px solid rgba(255,255,255,0.2);
+  border-top: 1px solid rgba(255, 255, 255, 0.2);
   margin-top: 15px;
   margin-bottom: 15px;
 }

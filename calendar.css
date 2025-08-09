@@ -210,10 +210,61 @@ hr {
   }
   .calendar-panel {
     padding: 1rem;
-    margin: 1rem auto;
+    ma@media (max-width: 576px) {
+  .navbar {
+    position: relative; 
+  }
+
+  .hamburger {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    position: absolute;
+    top: 0;
+    right: 0;
+    width: 30px;
+    height: 24px;
+    background: transparent;
+    border: none;
+    cursor: pointer;
+    padding: 5px; 
+    box-sizing: border-box;
+    z-index: 11; 
+  }
+
+  .hamburger span {
+    width: 30px;
+    height: 3px;
+    background: #d4e157;
+    border-radius: 2px;
+    transition: all 0.3s linear;
+    position: relative;
+    transform-origin: 1px;
+  }
+
+  .nav-links {
+    display: none;
+    flex-direction: column;
+    gap: 10px;
+    background-color: rgba(127, 127, 127); 
+    padding: 20px 20px 20px 15px;
+    border-radius: 10px;
+    position: absolute;
+    top: 0;
+    right: 0;
+    width: 220px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+    z-index: 10;
+  }
+
+  .nav-links.active {
+    display: flex;
+  }
+}
+rgin: 1rem auto;
   }
   iframe {
-    height: 380px; /* slightly taller for small phones */
+    height: 380px; 
   }
 
   /* Hamburger button base and positioning */
@@ -253,10 +304,10 @@ hr {
     padding: 15px 20px;
     border-radius: 10px;
     position: absolute;
-    top: 45px;  /* closer to hamburger */
-    right: 15px; /* align right inside panel */
+    top: 45px; 
+    right: 15px;
     width: 220px;
-    box-shadow: 0 4px 12px rgba(0,0,0,0.15); /* softer shadow */
+    box-shadow: 0 4px 12px rgba(0,0,0,0.15);
     z-index: 10;
   }
 

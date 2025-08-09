@@ -248,6 +248,7 @@ hr {
   .hamburger span {
     width: 100%;
     height: 3px;
+    text-align: left;
     background: #e4fc94; 
     border-radius: 2px;
     transition: all 0.3s linear;

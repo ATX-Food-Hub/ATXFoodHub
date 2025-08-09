@@ -266,7 +266,8 @@ hr {
     position: absolute;
     top: 0;
     right: 0;
-    width: 240px;
+    min-width: 180px;
+    max-width: 220px;
     box-shadow: 0 6px 18px rgba(0, 0, 0, 0.2);
     z-index: 10;
   }

@@ -189,6 +189,20 @@ hr {
   }
 }
 
+/* Hide hamburger on desktop */
+@media (min-width: 577px) {
+  .hamburger {
+    display: none;
+    width: 0;
+    height: 0;
+    border: none;
+    background: transparent;
+    padding: 0;
+    margin: 0;
+    overflow: hidden;
+  }
+}
+
 /* Small phones */
 @media (max-width: 576px) {
   html {
@@ -250,16 +264,4 @@ hr {
   .nav-links.active {
     display: flex;
   }
-}
-
-/* Hide hamburger on desktop completely to avoid weird dot */
-.hamburger {
-  display: none;
-  width: 0;
-  height: 0;
-  border: none;
-  background: transparent;
-  padding: 0;
-  margin: 0;
-  overflow: hidden;
 }

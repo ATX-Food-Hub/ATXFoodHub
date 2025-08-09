@@ -249,7 +249,7 @@ hr {
     display: none;
     flex-direction: column;
     gap: 10px;
-    background-color: #dcd8d0;
+    background-color: rgba(105, 105, 105);
     padding: 15px 20px;
     border-radius: 10px;
     position: absolute;

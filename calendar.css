@@ -57,7 +57,7 @@ body::before {
   align-items: center;
   flex-wrap: wrap;
   margin-bottom: 0;
-  position: relative;
+  position: relative; /* for absolute positioning hamburger */
 }
 
 /* Nav links */
@@ -202,23 +202,26 @@ hr {
     height: 380px; /* slightly taller for small phones */
   }
 
-  /* Hamburger button shown on mobile */
+  /* Hamburger button base and positioning */
   .hamburger {
     display: flex;
     flex-direction: column;
     justify-content: space-around;
-    width: 25px;
-    height: 22px;
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    width: 30px;
+    height: 24px;
     background: transparent;
     border: none;
     cursor: pointer;
     padding: 0;
     box-sizing: border-box;
-    z-index: 3;
+    z-index: 20;
   }
 
   .hamburger span {
-    width: 25px;
+    width: 30px;
     height: 3px;
     background: #e4fc94;
     border-radius: 2px;
@@ -227,24 +230,36 @@ hr {
     transform-origin: 1px;
   }
 
-  /* Initially hide nav links */
+  /* Nav menu initially hidden on mobile */
   .nav-links {
     display: none;
     flex-direction: column;
     gap: 10px;
-    background-color: #696969;
+    background-color: rgba(105, 105, 105, 0.95); /* darker gray w/ transparency */
     padding: 15px 20px;
     border-radius: 10px;
     position: absolute;
-    top: 55px;  /* adjust based on navbar height */
-    right: 40px; /* align right inside panel */
-    width: 200px;
-    box-shadow: 0 8px 24px rgba(0,0,0,0.2);
-    z-index: 2;
+    top: 45px;  /* closer to hamburger */
+    right: 15px; /* align right inside panel */
+    width: 220px;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.15); /* softer shadow */
+    z-index: 10;
   }
 
-  /* Show nav links when active */
+  /* Show nav when active */
   .nav-links.active {
     display: flex;
   }
+}
+
+/* Hide hamburger on desktop completely to avoid weird dot */
+.hamburger {
+  display: none;
+  width: 0;
+  height: 0;
+  border: none;
+  background: transparent;
+  padding: 0;
+  margin: 0;
+  overflow: hidden;
 }

@@ -203,14 +203,20 @@ hr {
   }
 }
 
-/* Small phones */
 @media (max-width: 576px) {
   html {
     font-size: 15px;
   }
+
   .calendar-panel {
     padding: 1rem;
-    ma@media (max-width: 576px) {
+    margin: 1rem auto;
+  }
+
+  iframe {
+    height: 380px;
+  }
+
   .navbar {
     position: relative; 
   }
@@ -227,15 +233,15 @@ hr {
     background: transparent;
     border: none;
     cursor: pointer;
-    padding: 5px; 
+    padding: 5px;
     box-sizing: border-box;
-    z-index: 11; 
+    z-index: 11;
   }
 
   .hamburger span {
     width: 30px;
     height: 3px;
-    background: #d4e157;
+    background: #d4e157; /* Your bright lime */
     border-radius: 2px;
     transition: all 0.3s linear;
     position: relative;
@@ -246,7 +252,7 @@ hr {
     display: none;
     flex-direction: column;
     gap: 10px;
-    background-color: rgba(127, 127, 127); 
+    background-color: rgba(127, 127, 127, 0.95); /* lighter gray with slight transparency */
     padding: 20px 20px 20px 15px;
     border-radius: 10px;
     position: absolute;
@@ -257,61 +263,6 @@ hr {
     z-index: 10;
   }
 
-  .nav-links.active {
-    display: flex;
-  }
-}
-rgin: 1rem auto;
-  }
-  iframe {
-    height: 380px; 
-  }
-
-  /* Hamburger button base and positioning */
-  .hamburger {
-    display: flex;
-    flex-direction: column;
-    justify-content: space-around;
-    position: absolute;
-    top: 10px;
-    right: 10px;
-    width: 30px;
-    height: 24px;
-    background: transparent;
-    border: none;
-    cursor: pointer;
-    padding: 0;
-    box-sizing: border-box;
-    z-index: 20;
-  }
-
-  .hamburger span {
-    width: 30px;
-    height: 3px;
-    background: #e4fc94;
-    border-radius: 2px;
-    transition: all 0.3s linear;
-    position: relative;
-    transform-origin: 1px;
-  }
-
-  /* Nav menu initially hidden on mobile */
-  .nav-links {
-    display: none;
-    flex-direction: column;
-    gap: 10px;
-    background-color: rgba(105, 105, 105);
-    padding: 15px 20px;
-    border-radius: 10px;
-    position: absolute;
-    top: 45px; 
-    right: 15px;
-    width: 220px;
-    box-shadow: 0 4px 12px rgba(0,0,0,0.15);
-    z-index: 10;
-  }
-
-  /* Show nav when active */
   .nav-links.active {
     display: flex;
   }

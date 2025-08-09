@@ -120,7 +120,8 @@ iframe {
   display: block;
   margin: 0 auto;
   width: 100%;
-  height: clamp(350px, 60vh, 600px);
+  max-width: 850px; /* prevent stretching too wide on desktop */
+  height: clamp(300px, 55vh, 550px);
   border: none;
   position: relative;
   z-index: 2;
@@ -180,9 +181,9 @@ hr {
     margin-bottom: 1rem;
   }
   .nav-links {
-    flex-direction: column;
-    align-items: flex-end;
-    gap: 0.6rem;
+    flex-wrap: wrap; /* allows two shorter rows */
+    justify-content: flex-end;
+    gap: 0.8rem;
   }
 }
 
@@ -196,10 +197,16 @@ hr {
     margin: 1rem auto;
   }
   .nav-links {
+    flex-wrap: nowrap;
+    overflow-x: auto; /* horizontal scroll instead of tall stack */
+    white-space: nowrap;
+    gap: 1rem;
     font-size: 0.9rem;
-    gap: 0.5rem;
+  }
+  .nav-links::-webkit-scrollbar {
+    display: none; /* hide mobile scrollbar */
   }
   iframe {
-    height: 350px;
+    height: 320px; /* shorter for small screens */
   }
 }

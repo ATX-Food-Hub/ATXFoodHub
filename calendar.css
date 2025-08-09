@@ -233,7 +233,7 @@ hr {
     height: 28px;
     background: rgba(121, 121, 121, 0.8); /* subtle translucent bg */
     border-radius: 6px;
-    border: 1px solid rgba(212, 225, 87, 0.7); /* subtle border matching lime */
+    border: 1px solid #e4fc94;
     cursor: pointer;
     padding: 4px;
     box-sizing: border-box;

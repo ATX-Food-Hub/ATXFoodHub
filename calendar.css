@@ -218,48 +218,56 @@ hr {
   }
 
   .navbar {
-    position: relative; 
+    position: relative; /* positioning context */
   }
 
+  /* Hamburger Button */
   .hamburger {
     display: flex;
     flex-direction: column;
     justify-content: space-around;
     position: absolute;
-    top: 0;
-    right: 0;
-    width: 30px;
-    height: 24px;
-    background: transparent;
-    border: none;
+    top: 8px;
+    right: 8px;
+    width: 32px;
+    height: 28px;
+    background: rgba(121, 121, 121, 0.8); /* subtle translucent bg */
+    border-radius: 6px;
+    border: 1px solid rgba(212, 225, 87, 0.7); /* subtle border matching lime */
     cursor: pointer;
-    padding: 5px;
+    padding: 4px;
     box-sizing: border-box;
-    z-index: 11;
+    z-index: 20; /* on top */
+    transition: background-color 0.3s ease;
+  }
+
+  .hamburger:hover {
+    background: rgba(121, 121, 121, 1); /* slightly stronger on hover */
   }
 
   .hamburger span {
-    width: 30px;
+    width: 100%;
     height: 3px;
-    background: #d4e157; /* Your bright lime */
+    background: #e4fc94; 
     border-radius: 2px;
     transition: all 0.3s linear;
     position: relative;
     transform-origin: 1px;
   }
 
+  /* Nav dropdown menu */
   .nav-links {
     display: none;
     flex-direction: column;
-    gap: 10px;
-    background-color: rgba(127, 127, 127, 0.95); /* lighter gray with slight transparency */
-    padding: 20px 20px 20px 15px;
-    border-radius: 10px;
+    gap: 12px;
+    background-color: rgba(121, 121, 121); 
+    padding: 24px 24px 24px 50px; 
+    border-radius: 12px;
     position: absolute;
     top: 0;
     right: 0;
-    width: 220px;
-    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+    width: 240px;
+    box-shadow: 0 6px 18px rgba(0, 0, 0, 0.2);
     z-index: 10;
   }
 

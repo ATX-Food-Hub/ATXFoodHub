@@ -227,8 +227,8 @@ hr {
     flex-direction: column;
     justify-content: space-around;
     position: absolute;
-    top: 8px;
-    right: 8px;
+    top: 12px;
+    right: 12px;
     width: 32px;
     height: 28px;
     background: rgba(121, 121, 121, 0.8);

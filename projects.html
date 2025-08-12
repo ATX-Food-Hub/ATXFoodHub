@@ -184,7 +184,7 @@
     <span></span>
     <span></span>
   </button>
-  
+
       <ul class="nav-links">
         <li><a href="index.html">HOME</a></li>
         <li><a href="tutorials.html">TUTORIALS</a></li>
@@ -265,6 +265,17 @@
       currentSlide = (currentSlide - 1 + slides.length) % slides.length;
       showSlide(currentSlide);
     }
+
+    
+  const hamburger = document.querySelector('.hamburger');
+  const navLinks = document.querySelector('.nav-links');
+
+  hamburger.addEventListener('click', () => {
+    const expanded = hamburger.getAttribute('aria-expanded') === 'true' || false;
+    hamburger.setAttribute('aria-expanded', !expanded);
+    navLinks.classList.toggle('active');
+  });
+  
   </script>
 </body>
 

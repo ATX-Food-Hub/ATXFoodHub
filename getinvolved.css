@@ -1,4 +1,5 @@
 /* ---------- Base reset ---------- */
+
 * {
   margin: 0;
   padding: 0;
@@ -10,9 +11,6 @@ html {
 }
 
 body, html {
-  display: flex;
-  flex-direction: column;
-  justify-content: center; /* center panel vertically */
   min-height: 100vh;
   font-family: 'Georgia', serif;
   background-image: url('mapbackground.jpeg');
@@ -22,7 +20,7 @@ body, html {
   background-attachment: fixed;
   position: relative;
   z-index: 1;
-  padding-bottom: 8vh;
+  padding-bottom: 8vh; /* bottom space for map visibility */
 }
 
 /* Overlay */
@@ -39,7 +37,8 @@ body::before {
 .involved-panel {
   width: 92%;
   max-width: 1200px;
-  margin: 5vh 0;
+  min-height: calc(100vh - 13vh);
+  margin: 5vh auto 0 auto;
   padding: 2rem;
   background-color: rgba(105, 105, 105);
   backdrop-filter: blur(4px);

@@ -34,8 +34,8 @@ body::before {
 .involved-panel {
   width: 92%;
   max-width: 1200px;
-  min-height: 85vh;         
-  margin: 5vh auto;        
+  min-height: 85vh;
+  margin: 5vh auto 8vh auto; 
   padding: 2rem;
   background-color: #696969;
   backdrop-filter: blur(4px);
@@ -45,9 +45,7 @@ body::before {
   position: relative;
   display: flex;
   flex-direction: column;
-  justify-content: space-between; 
 }
-
 
 /* Navbar */
 .navbar {

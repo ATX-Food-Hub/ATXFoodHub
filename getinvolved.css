@@ -1,0 +1,260 @@
+/* Base reset*/
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html {
+  font-size: 16px;
+}
+
+body, html {
+  min-height: 100vh;
+  font-family: 'Georgia', serif;
+  background-image: url('mapbackground.jpeg');
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+  position: relative;
+  z-index: 1;
+}
+
+body::before {
+  content: "";
+  position: fixed;
+  inset: 0;
+  background-color: rgba(183, 198, 139, 0.5);
+  z-index: 0;
+  pointer-events: none;
+}
+
+/* Main panel */
+.involved-panel {
+  width: 92%;
+  max-width: 1200px;
+  min-height: 85vh;
+  margin: 5vh auto;
+  padding: 2rem;
+  background-color: #696969;
+  backdrop-filter: blur(4px);
+  border-radius: 20px;
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.12);
+  z-index: 2;
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  align-items: stretch;
+  transition: all 0.2s ease;
+}
+
+/* Navbar */
+.navbar {
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+  flex-wrap: wrap;
+  position: relative;
+}
+
+.nav-links {
+  list-style: none;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 2rem;
+}
+
+.nav-links li a {
+  text-decoration: none;
+  color: #e4fc94;
+  font-weight: bold;
+  font-size: 1rem;
+  transition: color 0.2s ease;
+}
+
+.nav-links li a:hover {
+  color: #c8e664;
+  text-decoration: underline;
+}
+
+/* Header */
+.involved-header {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 2rem;
+  margin-bottom: 2rem;
+  padding: 0.5rem 0 0.625rem 0;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.2);
+}
+
+.involved-header > div {
+  flex-grow: 1;
+  min-width: 200px;
+}
+
+.logo {
+  width: clamp(70px, 12vw, 100px);
+  height: auto;
+  object-fit: contain;
+  background-color: #696969;
+}
+
+.involved-header h1 {
+  font-size: clamp(1.8rem, 4vw, 2.5rem);
+  margin-bottom: 0.5rem;
+  color: #e4fc94;
+}
+
+.involved-header .description {
+  font-size: clamp(0.95rem, 1.5vw, 1.1rem);
+  color: #dcd8d0;
+}
+
+/* Form cards */
+.form-sections {
+  display: grid;
+  gap: 1.5rem;
+  margin-bottom: 1rem;
+}
+
+.form-card {
+  background: rgba(105, 105, 105, 0.7);
+  padding: 1.25rem 1.5rem;
+  border-radius: 14px;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.15);
+  transition: transform 0.2s ease;
+}
+
+.form-card:hover {
+  transform: translateY(-2px);
+}
+
+.form-card h2 {
+  font-size: 1.4rem;
+  color: #fff;
+  margin-bottom: 0.5rem;
+}
+
+.form-card p {
+  font-size: 1rem;
+  color: #dcd8d0;
+  margin-bottom: 1rem;
+}
+
+.form-button {
+  display: inline-block;
+  padding: 0.5rem 1rem;
+  background-color: #e4fc94;
+  color: #333;
+  border-radius: 8px;
+  font-weight: bold;
+  text-decoration: none;
+  transition: background-color 0.2s ease;
+}
+
+.form-button:hover {
+  background-color: #c8e664;
+}
+
+/* Footer */
+footer {
+  color: #dcd8d0;
+  text-align: left;
+  padding: 0.3rem 0;
+  font-size: clamp(0.85rem, 1.1vw, 0.95rem);
+}
+
+footer a {
+  color: #e4fc94;
+  text-decoration: none;
+}
+
+footer a:hover {
+  text-decoration: underline;
+  color: #c8e664;
+}
+
+hr {
+  border: none;
+  border-top: 1px solid rgba(255, 255, 255, 0.2);
+  margin: 1rem 0;
+}
+
+/* ---------- Responsive ---------- */
+
+/* Tablets */
+@media (max-width: 768px) {
+  .involved-header {
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+  }
+  .logo {
+    margin-bottom: 1rem;
+  }
+}
+
+/* Hide hamburger on desktop */
+@media (min-width: 577px) {
+  .hamburger {
+    display: none;
+  }
+}
+
+/* Mobile */
+@media (max-width: 576px) {
+  html {
+    font-size: 15px;
+  }
+
+  .involved-panel {
+    padding: 1rem;
+    margin: 1rem auto;
+  }
+
+  /* Hamburger */
+  .hamburger {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    position: absolute;
+    top: 12px;
+    right: 12px;
+    width: 32px;
+    height: 28px;
+    background: rgba(121, 121, 121, 0.8);
+    border-radius: 6px;
+    border: 1px solid #e4fc94;
+    cursor: pointer;
+    padding: 4px;
+    box-sizing: border-box;
+    z-index: 20; 
+  }
+
+  .hamburger span {
+    width: 100%;
+    height: 3px;
+    background: #e4fc94; 
+    border-radius: 2px;
+  }
+
+  .nav-links {
+    display: none;
+    flex-direction: column;
+    gap: 12px;
+    background-color: rgba(121, 121, 121);
+    padding: 0.75rem 1rem; 
+    border-radius: 12px;
+    position: absolute;
+    top: 8px; 
+    right: 8px; 
+    box-shadow: 0 6px 18px rgba(0, 0, 0, 0.2);
+    z-index: 10;
+  }
+
+  .nav-links.active {
+    display: flex;
+  }
+}

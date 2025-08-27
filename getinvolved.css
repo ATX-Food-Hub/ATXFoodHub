@@ -10,6 +10,9 @@ html {
 }
 
 body, html {
+  display: flex;
+  flex-direction: column;
+  justify-content: center; /* center panel vertically */
   min-height: 100vh;
   font-family: 'Georgia', serif;
   background-image: url('mapbackground.jpeg');
@@ -19,7 +22,7 @@ body, html {
   background-attachment: fixed;
   position: relative;
   z-index: 1;
-  padding-bottom: 8vh; /* bottom space for map visibility */
+  padding-bottom: 8vh;
 }
 
 /* Overlay */
@@ -37,9 +40,9 @@ body::before {
   width: 92%;
   max-width: 1200px;
   min-height: calc(100vh - 13vh); /* leaves space at bottom + top margin */
-  margin: 5vh auto 0 auto;
+  margin: 0 auto;
   padding: 2rem;
-  background-color: rgba(105, 105, 105, 0.7);
+  background-color: rgba(105, 105, 105);
   backdrop-filter: blur(4px);
   border-radius: 20px;
   box-shadow: 0 8px 24px rgba(0, 0, 0, 0.12);

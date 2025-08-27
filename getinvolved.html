@@ -1,0 +1,76 @@
+<!DOCTYPE html> 
+<html>
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="getinvolved.css" />
+    <title>Get Involved</title>
+</head>
+<body>
+  <div class="involved-panel">
+
+    <!-- NAVBAR -->
+    <nav class="navbar">
+      <!-- Hamburger button for mobile -->
+      <button class="hamburger" aria-label="Toggle navigation menu" aria-expanded="false" aria-controls="nav-menu">
+        <span></span>
+        <span></span>
+        <span></span>
+      </button>
+
+      <!-- Nav links -->
+      <ul class="nav-links" id="nav-menu">
+        <li><a href="index.html">HOME</a></li>
+        <li><a href="tutorials.html">TUTORIALS</a></li>
+        <li><a href="https://docs.google.com/forms/d/e/1FAIpQLSch2VEfYH0HOo6nLVtVA80ANG8w2hmjc_D5TfPsYolnSSijPA/viewform?usp=dialog">UPDATE MAP</a></li>
+        <li><a href="calendar.html">CALENDAR</a></li>
+        <li><a href="projects.html">PROJECTS</a></li>
+      </ul>
+    </nav>
+
+    <!-- HEADER -->
+    <div class="involved-header">
+      <img src="logozoomed.jpeg" alt="Student Org Logo" class="logo" />
+      <div>
+        <h1>Get Involved</h1>
+        <p class="description">Be part of the movement — join, volunteer, and stay connected!</p>
+      </div>
+    </div>
+
+    <!-- CONTENT -->
+    <div class="form-sections">
+      <section class="form-card">
+        <h2>Interest Form</h2>
+        <p>Get updates about the org and future opportunities!</p>
+        <a href="YOUR_INTEREST_FORM_LINK" target="_blank" class="form-button">Fill Out Form</a>
+      </section>
+
+      <section class="form-card">
+        <h2>New Member Application</h2>
+        <p>Join our org as a committee member today! Applications are due on <strong>September 12th at 11:59 PM</strong>.</p>
+        <a href="YOUR_MEMBER_APP_LINK" target="_blank" class="form-button">Apply Now</a>
+      </section>
+    </div>
+
+    <hr>
+    <footer>
+      <p>Est. 2024 | All rights reserved.</p>
+      <address>
+        Contact us at: <a href="mailto:atxfoodhub@gmail.com">atxfoodhub@gmail.com</a>
+      </address>
+    </footer>
+  </div>
+
+  <!-- JS for hamburger menu -->
+  <script>
+    const hamburger = document.querySelector('.hamburger');
+    const navLinks = document.querySelector('.nav-links');
+
+    hamburger.addEventListener('click', () => {
+      const expanded = hamburger.getAttribute('aria-expanded') === 'true' || false;
+      hamburger.setAttribute('aria-expanded', !expanded);
+      navLinks.classList.toggle('active');
+    });
+  </script>
+</body>
+</html>

@@ -39,8 +39,7 @@ body::before {
 .involved-panel {
   width: 92%;
   max-width: 1200px;
-  min-height: calc(100vh - 13vh); /* leaves space at bottom + top margin */
-  margin: 0 auto;
+  margin: 5vh 0;
   padding: 2rem;
   background-color: rgba(105, 105, 105);
   backdrop-filter: blur(4px);

@@ -20,7 +20,7 @@ body, html {
   background-attachment: fixed;
   position: relative;
   z-index: 1;
-  padding-bottom: 8vh; /* bottom space for map visibility */
+  padding-bottom: 5vh; 
 }
 
 /* Overlay */

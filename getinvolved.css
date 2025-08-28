@@ -121,10 +121,9 @@ body::before {
 }
 
 .form-card {
-  background: rgba(105, 105, 105, 0.7);
+  background: #dcd8d0;
   padding: 1.25rem 1.5rem;
   border-radius: 14px;
-  box-shadow: 0 4px 12px rgba(0,0,0,0.15);
   transition: transform 0.2s ease;
 }
 
@@ -134,7 +133,7 @@ body::before {
 
 .form-card h2 {
   font-size: 1.4rem;
-  color: #fff;
+  color: #696969;
   margin-bottom: 0.5rem;
 }
 

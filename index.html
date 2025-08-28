@@ -86,6 +86,7 @@
 
 // Log map clicks to Google Sheets via Apps Script
   document.querySelector(".map").addEventListener("click", () => {
+    console.log("Click detected!");
   fetch("https://script.google.com/macros/s/AKfycbxsLNbu0fw80YsvYGFd4cI2WXDAazxSzB-e6WyydxUKV-xNevysb3hTZshJw3Vjwdqy/exec", {
     method: "POST",
     headers: {

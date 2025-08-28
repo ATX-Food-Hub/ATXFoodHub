@@ -139,7 +139,7 @@ body::before {
 
 .form-card p {
   font-size: 1rem;
-  color: #696969;
+  color: #dcd8d0;
   margin-bottom: 1rem;
 }
 
@@ -147,7 +147,7 @@ body::before {
   display: inline-block;
   padding: 0.5rem 1rem;
   background-color: #e4fc94;
-  color: #fff;
+  color: #333;
   border-radius: 8px;
   font-weight: bold;
   text-decoration: none;
@@ -155,7 +155,7 @@ body::before {
 }
 
 .form-button:hover {
-  background-color: #c8e763;
+  background-color: #c8e664;
 }
 
 /* ---------- Footer ---------- */

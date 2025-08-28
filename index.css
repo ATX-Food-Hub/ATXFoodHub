@@ -59,6 +59,7 @@ body {
   align-items: center;
   border-bottom: 1px solid rgba(255, 255, 255, 0.2);
   padding-bottom: 1rem;
+  position: relative; /* needed for hamburger */
 }
 
 .nav-links {
@@ -164,7 +165,6 @@ footer a:hover {
   text-decoration: underline;
 }
 
-
 hr {
   border: none;
   border-top: 1px solid rgba(255, 255, 255, 0.2);
@@ -172,7 +172,20 @@ hr {
   margin-bottom: 15px;
 }
 
-/* Responsive */
+/* --------- RESPONSIVE BREAKPOINTS --------- */
+
+/* Large tablets and small laptops */
+@media (max-width: 992px) {
+  .nav-links {
+    gap: 1rem;
+    font-size: 0.95rem;
+  }
+  .panel {
+    padding: 1.5rem;
+  }
+}
+
+/* Tablets & large phones */
 @media (max-width: 768px) {
   .navbar {
     flex-direction: column;
@@ -196,6 +209,94 @@ hr {
 
   .map-wrapper {
     height: 450px;
+  }
+}
+
+/* Hide hamburger on desktop */
+@media (min-width: 577px) {
+  .hamburger {
+    display: none;
+    width: 0;
+    height: 0;
+    border: none;
+    background: transparent;
+    padding: 0;
+    margin: 0;
+    overflow: hidden;
+  }
+}
+
+@media (max-width: 576px) {
+  html {
+    font-size: 15px;
+  }
+
+  .panel {
+    padding: 1rem;
+    margin: 1rem auto;
+  }
+
+  .map-wrapper {
+    height: 380px;
+  }
+
+  .navbar {
+    position: relative; 
+  }
+
+  /* Hamburger Button */
+  .hamburger {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    position: absolute;
+    top: 12px;
+    right: 12px;
+    width: 32px;
+    height: 28px;
+    background: rgba(121, 121, 121, 0.8);
+    border-radius: 6px;
+    border: 1px solid #e4fc94;
+    cursor: pointer;
+    padding: 4px;
+    box-sizing: border-box;
+    z-index: 20; 
+    transition: background-color 0.3s ease;
+  }
+
+  .hamburger:hover {
+    background: rgba(121, 121, 121, 1); 
+  }
+
+  .hamburger span {
+    width: 100%;
+    height: 3px;
+    text-align: left;
+    background: #e4fc94; 
+    border-radius: 2px;
+    transition: all 0.3s linear;
+    position: relative;
+    transform-origin: 1px;
+  }
+
+  /* Nav dropdown menu */
+  .nav-links {
+    display: none;
+    flex-direction: column;
+    gap: 12px;
+    background-color: rgba(121, 121, 121); 
+    padding: 0.75rem 1rem; 
+    border-radius: 12px;
+    position: absolute;
+    top: 8px; 
+    right: 8px; 
+    min-width: max-content; 
+    box-shadow: 0 6px 18px rgba(0, 0, 0, 0.2);
+    z-index: 10;
+  }
+
+  .nav-links.active {
+    display: flex;
   }
 }
 

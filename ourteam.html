@@ -1,22 +1,27 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
+  <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title>Meet Our Team</title>
   <link rel="stylesheet" href="index.css" />
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" />
 </head>
 <body>
+
   <div class="panel">
     <!-- NAVBAR -->
     <nav class="navbar">
       <div class="logo">
         <img src="logozoomed.jpeg" alt="Site Logo" />
       </div>
+
       <button class="hamburger" aria-label="Toggle navigation menu" aria-expanded="false" aria-controls="nav-menu">
-        <span></span><span></span><span></span>
+        <span></span>
+        <span></span>
+        <span></span>
       </button>
+
       <ul class="nav-links" id="nav-menu">
         <li><a href="index.html">HOME</a></li>
         <li><a href="tutorials.html">TUTORIALS</a></li>
@@ -31,10 +36,12 @@
     <!-- HEADER -->
     <div class="header">
       <h1>Meet Our Team</h1>
-      <p class="description">Learn more about the amazing individuals behind the ATX Food Hub initiative!</p>
+      <p class="description">
+        Learn more about the amazing individuals behind the ATX Food Hub initiative!
+      </p>
     </div>
 
-    <!-- PRESIDENTS -->
+    <!-- PRESIDENT & VICE PRESIDENT -->
     <section class="team-section">
       <h2>Leadership</h2>
       <div class="team-grid">
@@ -53,7 +60,7 @@
       </div>
     </section>
 
-    <!-- COMMITTEES -->
+    <!-- OUTREACH COMMITTEE -->
     <section class="team-section">
       <h2>Outreach & Engagement Committee</h2>
       <div class="team-grid">
@@ -63,7 +70,6 @@
           <p>Major: Communication</p>
           <p>Fun Fact: Met Michelle Obama once</p>
         </div>
-        <!-- Add more outreach members below -->
         <div class="team-member">
           <img src="outreach_member1.jpg" alt="Member">
           <h3>Member Name</h3>
@@ -73,6 +79,7 @@
       </div>
     </section>
 
+    <!-- RESEARCH COMMITTEE -->
     <section class="team-section">
       <h2>Research Committee</h2>
       <div class="team-grid">
@@ -82,7 +89,6 @@
           <p>Major: Biology</p>
           <p>Fun Fact: Once sequenced soil DNA for fun</p>
         </div>
-        <!-- Add more research members -->
         <div class="team-member">
           <img src="research_member.jpg" alt="Research Member">
           <h3>Member Name</h3>
@@ -92,6 +98,7 @@
       </div>
     </section>
 
+    <!-- MAP IMPROVEMENT COMMITTEE -->
     <section class="team-section">
       <h2>Map Improvement Committee</h2>
       <div class="team-grid">
@@ -101,7 +108,6 @@
           <p>Major: Computer Science</p>
           <p>Fun Fact: Collects old atlases</p>
         </div>
-        <!-- Add more map members -->
         <div class="team-member">
           <img src="map_member.jpg" alt="Map Member">
           <h3>Member Name</h3>
@@ -114,8 +120,21 @@
     <hr />
     <footer>
       <p>Est. 2024 | All rights reserved.</p>
-      <address>Contact us at: <a href="mailto:atxfoodhub@gmail.com">atxfoodhub@gmail.com</a></address>
+      <address>
+        Contact us at: <a href="mailto:atxfoodhub@gmail.com">atxfoodhub@gmail.com</a>
+      </address>
     </footer>
   </div>
+
+  <script>
+    const hamburger = document.querySelector('.hamburger');
+    const navLinks = document.querySelector('.nav-links');
+
+    hamburger.addEventListener('click', () => {
+      const expanded = hamburger.getAttribute('aria-expanded') === 'true' || false;
+      hamburger.setAttribute('aria-expanded', !expanded);
+      navLinks.classList.toggle('active');
+    });
+  </script>
 </body>
 </html>

@@ -8,7 +8,7 @@
 html, body {
   height: 100%;
   font-family: 'Georgia', serif;
-  color: #e4fc94; /* Set global text color */
+  color: #e4fc94;
   background-image: url('mapbackground.jpeg');
   background-size: cover;
   background-position: center;
@@ -124,7 +124,7 @@ body {
   flex: 1;
   min-width: 240px;
   background-color: #e4fc94;
-  color: #000;
+  color: #000000;
   text-decoration: none;
   padding: 2rem 1rem;
   border-radius: 10px;

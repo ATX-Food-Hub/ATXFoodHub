@@ -68,7 +68,7 @@ body::before {
   text-decoration: none;
   color: #e4fc94;
   font-weight: bold;
-  font-size: 1rem;
+  font-size: 0.9rem;
   transition: color 0.2s ease;
 }
 

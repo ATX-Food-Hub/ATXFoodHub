@@ -4,127 +4,19 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title>Meet Our Team</title>
+  <link rel="stylesheet" href="index.css" />
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" />
-
-  <style>
-    /* Reset */
-    * {
-      margin: 0;
-      padding: 0;
-      box-sizing: border-box;
-    }
-
-    body {
-      font-family: Arial, sans-serif;
-      background-color: #fdfdfd;
-      color: #333;
-    }
-
-    /* Panel wrapper */
-    .panel {
-      display: flex;
-      flex-direction: column;
-      min-height: 100vh;
-    }
-
-    /* Navbar */
-    .navbar {
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-      background-color: #fff;
-      padding: 1rem 2rem;
-      border-bottom: 2px solid #eee;
-    }
-
-    .navbar .logo img {
-      height: 50px;
-    }
-
-    .nav-links {
-      list-style: none;
-      display: flex;
-      gap: 1.5rem;
-    }
-
-    .nav-links a {
-      text-decoration: none;
-      font-weight: bold;
-      color: #006400; /* matches “Learn more…” text */
-      transition: color 0.3s ease;
-    }
-
-    .nav-links a:hover {
-      color: #228B22;
-    }
-
-    /* Hamburger (for mobile) */
-    .hamburger {
-      display: none;
-      flex-direction: column;
-      gap: 5px;
-      background: none;
-      border: none;
-      cursor: pointer;
-    }
-
-    .hamburger span {
-      display: block;
-      width: 25px;
-      height: 3px;
-      background-color: #006400;
-    }
-
-    /* Header section */
-    .header {
-      text-align: center;
-      padding: 4rem 2rem;
-      background-color: #f4fdf4;
-    }
-
-    .header h1 {
-      font-size: 2.5rem;
-      margin-bottom: 1rem;
-      color: #006400;
-    }
-
-    .description {
-      font-size: 1.2rem;
-      color: #006400;
-      max-width: 600px;
-      margin: 0 auto;
-      line-height: 1.6;
-    }
-
-    /* Responsive */
-    @media (max-width: 768px) {
-      .nav-links {
-        display: none;
-        flex-direction: column;
-        gap: 1rem;
-        margin-top: 1rem;
-      }
-
-      .hamburger {
-        display: flex;
-      }
-
-      .navbar[aria-expanded="true"] .nav-links {
-        display: flex;
-      }
-    }
-  </style>
 </head>
 <body>
 
   <div class="panel">
     <!-- NAVBAR -->
-    <nav class="navbar" aria-expanded="false">
+    <nav class="navbar">
       <div class="logo">
         <img src="logozoomed.jpeg" alt="Site Logo" />
       </div>
 
-      <button class="hamburger" aria-label="Toggle navigation menu" aria-controls="nav-menu">
+      <button class="hamburger" aria-label="Toggle navigation menu" aria-expanded="false" aria-controls="nav-menu">
         <span></span>
         <span></span>
         <span></span>
@@ -136,8 +28,8 @@
         <li><a href="https://docs.google.com/forms/d/e/1FAIpQLSch2VEfYH0HOo6nLVtVA80ANG8w2hmjc_D5TfPsYolnSSijPA/viewform?usp=dialog">UPDATE MAP</a></li>
         <li><a href="calendar.html">CALENDAR</a></li>
         <li><a href="projects.html">PROJECTS</a></li>
+        <li><a href="getinvolved.html">GET INVOLVED</a></li>
         <li><a href="partnerships.html">PARTNERSHIPS</a></li>
-        <li><a href="ourteam.html">OUR TEAM</a></li>
       </ul>
     </nav>
 
@@ -146,22 +38,104 @@
       <h1>Meet Our Team</h1>
       <p class="description">
         Learn more about the amazing individuals behind the ATX Food Hub initiative!
-        <br><br>
-        Coming soon...
       </p>
     </div>
-  </div> <!-- closes .panel -->
+
+    <!-- PRESIDENT & VICE PRESIDENT -->
+    <section class="team-section">
+      <h2>Leadership</h2>
+      <div class="team-grid">
+        <div class="team-member">
+          <img src="president.jpg" alt="President">
+          <h3>Siva Epuri</h3>
+          <p>Major: Public Health</p>
+          <p>Fun Fact: I love spending time outdoors, whether it's hiking, kayaking, or just taking a walk.</p>
+        </div>
+        <div class="team-member">
+          <img src="vp.jpg" alt="Vice President">
+          <h3>Alisha Wille</h3>
+          <p>Major: Statistics and Data Science</p>
+          <p>Fun Fact: I love doing arts and crafts!</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- OUTREACH COMMITTEE -->
+    <section class="team-section">
+      <h2>Outreach & Engagement Committee</h2>
+      <div class="team-grid">
+        <div class="team-member">
+          <img src="outreach_lead.jpg" alt="Outreach Lead">
+          <h3>Lead: Adya Chawda</h3>
+          <p>Major: Neuroscience</p>
+          <p>Fun Fact: I know four languages.</p>
+        </div>
+        <div class="team-member">
+          <img src="outreach_member1.jpg" alt="Member">
+          <h3>Member Name</h3>
+          <p>Major: Sociology</p>
+          <p>Fun Fact: Has a pet snail</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- RESEARCH COMMITTEE -->
+    <section class="team-section">
+      <h2>Research Committee</h2>
+      <div class="team-grid">
+        <div class="team-member">
+          <img src="research_lead.jpg" alt="Research Lead">
+          <h3>Lead: Aasritha Senagapally</h3>
+          <p>Major: Biochemistry</p>
+          <p>Fun Fact: I love to read! Currently, my fixation is murder mystery.</p>
+        </div>
+        <div class="team-member">
+          <img src="research_member.jpg" alt="Research Member">
+          <h3>Member Name</h3>
+          <p>Major: Environmental Science</p>
+          <p>Fun Fact: Makes kombucha at home</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- MAP IMPROVEMENT COMMITTEE -->
+    <section class="team-section">
+      <h2>Map Improvement Committee</h2>
+      <div class="team-grid">
+        <div class="team-member">
+          <img src="map_lead.jpg" alt="Map Lead">
+          <h3>Lead: Isha Jannu</h3>
+          <p>Major: Computer Science</p>
+          <p>Fun Fact: I love cafe hopping and finding new favorite sweet treats!</p>
+        </div>
+        <div class="team-member">
+          <img src="map_member.jpg" alt="Map Member">
+          <h3>Member Name</h3>
+          <p>Major: GIS & Data Science</p>
+          <p>Fun Fact: Bikes to every community garden in town</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- FOOTER -->
+    <hr />
+    <footer>
+      <p>Est. 2024 | All rights reserved.</p>
+      <address>
+        Contact us at: <a href="mailto:atxfoodhub@gmail.com">atxfoodhub@gmail.com</a>
+      </address>
+    </footer>
+  </div>
 
   <script>
-    // Toggle hamburger menu
-    const hamburger = document.querySelector(".hamburger");
-    const navbar = document.querySelector(".navbar");
+    const hamburger = document.querySelector('.hamburger');
+    const navLinks = document.querySelector('.nav-links');
 
-    hamburger.addEventListener("click", () => {
-      const expanded = navbar.getAttribute("aria-expanded") === "true";
-      navbar.setAttribute("aria-expanded", !expanded);
+    hamburger.addEventListener('click', () => {
+      const expanded = hamburger.getAttribute('aria-expanded') === 'true' || false;
+      hamburger.setAttribute('aria-expanded', !expanded);
+      navLinks.classList.toggle('active');
     });
   </script>
-
 </body>
 </html>

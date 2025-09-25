@@ -52,27 +52,29 @@ body {
   z-index: 10;
 }
 
-/* Navbar */
+/* Navbar INSIDE the panel */
 .navbar {
   display: flex;
-  justify-content: space-between;
+  justify-content: flex-end;
   align-items: center;
-  border-bottom: 1px solid rgba(255, 255, 255, 0.2);
-  padding-bottom: 1rem;
-  position: relative; /* needed for hamburger */
+  flex-wrap: wrap;
+  margin-bottom: 0;
+  position: relative; /* for absolute positioning hamburger */
 }
 
+/* Nav links */
 .nav-links {
   list-style: none;
   display: flex;
+  flex-wrap: wrap;
   gap: 2rem;
 }
 
 .nav-links li a {
+  text-decoration: none;
   color: #e4fc94;
   font-weight: bold;
   font-size: 0.9rem;
-  text-decoration: none;
   transition: color 0.2s ease;
 }
 

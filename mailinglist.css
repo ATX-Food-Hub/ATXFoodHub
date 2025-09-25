@@ -1,0 +1,315 @@
+/* ---------- GLOBAL RESET & BASE ---------- */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+  }
+  
+  html, body {
+    height: 100%;
+    font-family: 'Georgia', serif;
+    background-image: url('mapbackground.jpeg');
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    position: relative;
+    z-index: 0;
+  }
+  
+  body::before {
+    content: "";
+    position: fixed;
+    inset: 0;
+    background-color: rgba(183, 198, 139, 0.5);
+    z-index: -1;
+    pointer-events: none;
+  }
+  
+  body {
+    padding: 2rem 1rem;
+    position: relative;
+    z-index: 1;
+  }
+  
+  /* ---------- PANEL ---------- */
+  .panel {
+    max-width: 1200px;
+    width: 92%;
+    background-color: #696969;
+    backdrop-filter: blur(4px);
+    border-radius: 20px;
+    padding: 40px;
+    margin: 0 auto;
+    box-shadow: 0 8px 24px rgba(0,0,0,0.12);
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
+    position: relative;
+    z-index: 10;
+  }
+  
+  /* ---------- NAVBAR ---------- */
+  .navbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.2);
+    padding-bottom: 1rem;
+    position: relative;
+  }
+  
+  .logo img {
+    width: 100px;
+    height: 100px;
+    object-fit: contain;
+    background-color: transparent;
+    border-radius: 0;
+    display: block;
+  }
+  
+  .nav-links {
+    list-style: none;
+    display: flex;
+    gap: 2rem;
+  }
+  
+  .nav-links li a {
+    color: #e4fc94;
+    font-weight: bold;
+    font-size: 0.9rem;
+    text-decoration: none;
+    transition: color 0.2s ease;
+  }
+  
+  .nav-links li a:hover {
+    color: #c8e664;
+    text-decoration: underline;
+  }
+  
+  /* ---------- HEADER ---------- */
+  .header h1 {
+    color: #e4fc94;
+    font-size: 2.5rem;
+    margin-bottom: 0.5rem;
+  }
+  
+  .header .description {
+    color: #dcd8d0;
+    font-size: 1.1rem;
+    line-height: 1.6;
+  }
+  
+  /* ---------- EMBEDDED GOOGLE FORM ---------- */
+  .map-wrapper {
+    width: 100%;
+    height: auto;
+    border-radius: 15px;
+    overflow: hidden;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.2);
+  }
+  
+  .map-wrapper iframe {
+    width: 100%;
+    height: 600px;
+    border: none;
+  }
+  
+  /* ---------- CARDS ---------- */
+  .cards {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 1rem;
+    justify-content: flex-start;
+  }
+  
+  .card {
+    flex: 1;
+    min-width: 280px;
+    background-color: #e4fc94;
+    color: #000000;
+    padding: 2rem 1.5rem;
+    border-radius: 12px;
+    text-align: left;
+    box-shadow: 0 4px 8px rgba(0,0,0,0.15);
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
+  }
+  
+  .card:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 12px 30px rgba(0,0,0,0.18);
+  }
+  
+  .card h3 {
+    margin-bottom: 1rem;
+    font-size: 1.3rem;
+    color: #333;
+  }
+  /* Partnerships Card */
+.partnerships-card {
+    background: linear-gradient(135deg, #e4fc94, #f7ffd9);
+    border: 2px solid #c8e664;
+    text-align: center;
+  }
+  
+  .partnerships-card h3 {
+    font-size: 1.6rem;
+    margin-bottom: 1rem;
+    color: #2f2f2f;
+    text-align: center;
+  }
+  
+  .partnership-list {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+  }
+  
+  .partnership-list li {
+    background: rgb(121, 121, 121);
+    margin: 0.4rem 0;
+    padding: 0.6rem 1rem;
+    border-radius: 8px;
+    font-size: 1rem;
+    color: #e4fc94;
+    font-weight: 500;
+    box-shadow: 0 2px 6px rgba(0,0,0,0.08);
+    transition: transform 0.2s ease, background 0.2s ease;
+  }
+  
+  .partnership-list li:hover {
+    transform: translateY(-3px);
+    background: rgba(121, 121, 121);
+  }
+  
+  .partnership-list li a {
+    color: #e4fc94; /* Set the hyperlink text color to green */
+    text-decoration: none; /* Remove underline if desired */
+}
+
+.partnership-list li a:hover {
+    text-decoration: underline; /* Optional: Add underline on hover */
+}
+  /* ---------- FOOTER ---------- */
+  footer {
+    color: #dcd8d0;
+    text-align: left;
+    font-size: 0.95rem;
+    padding-top: 5px;
+    padding-bottom: 5px;
+  }
+  
+  footer a {
+    color: #e4fc94;
+    text-decoration: none;
+  }
+  
+  footer a:hover {
+    color: #c8e664;
+    text-decoration: underline;
+  }
+  
+  hr {
+    border: none;
+    border-top: 1px solid rgba(255, 255, 255, 0.2);
+    margin-top: 15px;
+    margin-bottom: 15px;
+  }
+  
+  /* ---------- RESPONSIVE ---------- */
+  
+  /* Large tablets and laptops */
+  @media (max-width: 992px) {
+    .nav-links {
+      gap: 1rem;
+      font-size: 0.95rem;
+    }
+    .panel {
+      padding: 1.5rem;
+    }
+  }
+  
+  /* Tablets */
+  @media (max-width: 768px) {
+    .navbar {
+      flex-direction: column;
+      gap: 10px;
+    }
+  
+    .nav-links {
+      flex-direction: column;
+      gap: 10px;
+      align-items: flex-start;
+    }
+  
+    .header {
+      text-align: center;
+    }
+  
+    .map-wrapper iframe {
+      height: 650px;
+    }
+  }
+  
+  /* Small phones */
+  @media (max-width: 576px) {
+    html {
+      font-size: 15px;
+    }
+  
+    .panel {
+      padding: 1rem;
+      margin: 1rem auto;
+    }
+  
+    .map-wrapper iframe {
+      height: 500px;
+    }
+  
+    /* Hamburger menu */
+    .hamburger {
+      display: flex;
+      flex-direction: column;
+      justify-content: space-around;
+      position: absolute;
+      top: 12px;
+      right: 12px;
+      width: 32px;
+      height: 28px;
+      background: rgba(121, 121, 121, 0.8);
+      border-radius: 6px;
+      border: 1px solid #e4fc94;
+      cursor: pointer;
+      padding: 4px;
+      z-index: 20;
+    }
+  
+    .hamburger span {
+      width: 100%;
+      height: 3px;
+      background: #e4fc94;
+      border-radius: 2px;
+      transition: all 0.3s ease;
+    }
+  
+    .nav-links {
+      display: none;
+      flex-direction: column;
+      gap: 12px;
+      background-color: rgba(121, 121, 121);
+      padding: 0.75rem 1rem;
+      border-radius: 12px;
+      position: absolute;
+      top: 8px;
+      right: 8px;
+      min-width: max-content;
+      box-shadow: 0 6px 18px rgba(0,0,0,0.2);
+      z-index: 10;
+    }
+  
+    .nav-links.active {
+      display: flex;
+    }
+  }
+  
+  

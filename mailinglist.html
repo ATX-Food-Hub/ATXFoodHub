@@ -3,34 +3,92 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>Community Map</title>
-  <link rel="stylesheet" href="index.css" />
-  <!-- Font Awesome CDN for icons -->
+  <title>Become a Partner</title>
+  <link rel="stylesheet" href="partnerships.css" />
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" />
 </head>
 <body>
 
   <div class="panel">
+    <!-- NAVBAR -->
     <nav class="navbar">
       <div class="logo">
         <img src="logozoomed.jpeg" alt="Site Logo" />
       </div>
 
-       <!-- Hamburger button for mobile -->
-  <button class="hamburger" aria-label="Toggle navigation menu" aria-expanded="false" aria-controls="nav-menu">
-    <span></span>
-    <span></span>
-    <span></span>
-  </button>
+      <!-- Hamburger button for mobile -->
+      <button class="hamburger" aria-label="Toggle navigation menu" aria-expanded="false" aria-controls="nav-menu">
+        <span></span>
+        <span></span>
+        <span></span>
+      </button>
       
       <ul class="nav-links" id="nav-menu">
         <li><a href="index.html">HOME</a></li>
         <li><a href="tutorials.html">TUTORIALS</a></li>
-        <li><a href="https://docs.google.com/forms/d/e/1FAIpQLSch2VEfYH0HOo6nLVtVA80ANG8w2hmjc_D5TfPsYolnSSijPA/viewform?usp=dialog">UPDATE MAP</a></li>
+        <li><a href="https://docs.google.com/forms/d/e/1FAIpQLSch2VEfYH0HOo6nLVtVA80ANG8w2hmjc_D5TfPsYolnSSijPA/viewform?usp=dialog">UPDATE MAP</a>
+        </li>
         <li><a href="calendar.html">CALENDAR</a></li>
         <li><a href="projects.html">PROJECTS</a></li>
-    <!--    <li><a href="getinvolved.html">GET INVOLVED</a></li> -->
+ <!--   <li><a href="getinvolved.html">GET INVOLVED</a></li>  -->
         <li><a href="partnerships.html">PARTNERSHIPS</a></li>
         <li><a href="ourteam.html">OUR TEAM</a></li>
+        <li><a href="mailinglist.html">MAILING LIST</a></li>
       </ul>      
     </nav>
+
+    <!-- HEADER -->
+    <div class="header">
+      <h1>Become a Partner With Us</h1>   
+    </div>
+
+    <!-- EMBEDDED GOOGLE FORM -->
+    <div class="map-wrapper">
+      <iframe 
+        src="https://docs.google.com/forms/d/1_zwkaBUlSTDxUbws8g3xiCRXVkmnhzK148GVcGiqPHU/viewform?embedded=true" 
+        width="100%" 
+        height="600" 
+        frameborder="0" 
+        marginheight="0" 
+        marginwidth="0">
+        Loading…
+      </iframe>
+    </div>
+
+    <!-- CURRENT PARTNERSHIPS -->
+    <section class="cards">
+        <div class="card partnerships-card">
+          <h3>Current Partnerships</h3>
+          <ul class="partnership-list">
+            <li><a href="https://thedailytexan.com/2025/04/17/ut-student-creates-map-with-nearby-affordable-resources-to-address-food-insecurity/" target="_blank">Daily Texan</a></li>            
+            <li><a href="https://deanofstudents.utexas.edu/sos/ut-outpost-snap-benefits.php" target="_blank">UT Outpost SNAP Peer Support Navigator</a></li>            
+            <li>Patterson Park Community Garden - Food Pantry Coordination</li>
+            <li><a href="https://rootsandwingsfest.com/" target="_blank">ATX Roots & Wings Festival</a></li>            
+            <li>Austin Bicycle Meals - Resource Card + Meal Distribution</li>
+          </ul>
+        </div>
+      </section>
+
+    <hr />
+    <footer>
+      <p>Est. 2024 | All rights reserved.</p>
+      <address>
+        Contact us at: <a href="mailto:atxfoodhub@gmail.com">atxfoodhub@gmail.com</a>
+        | Follow our Instagram at: <a href="https://www.instagram.com/atx_foodhub/">atx_foodhub</a>
+      </address>
+    </footer>
+  </div>
+
+  <script>
+    const hamburger = document.querySelector('.hamburger');
+    const navLinks = document.querySelector('.nav-links');
+
+    hamburger.addEventListener('click', () => {
+      const expanded = hamburger.getAttribute('aria-expanded') === 'true' || false;
+      hamburger.setAttribute('aria-expanded', !expanded);
+      navLinks.classList.toggle('active');
+    });
+  </script>
+
+</body>
+</html>

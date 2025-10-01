@@ -83,7 +83,7 @@ body {
 
 /* --------- HEADER --------- */
 .header h1 {
-  color: #dcd8d0; /* UPDATED */
+  color: #e4fc94; /* UPDATED */
   font-size: 2.5rem;
   margin-bottom: 0.5rem;
 }
@@ -194,7 +194,7 @@ hr {
 }
 
 .team-section h2 {
-  color: #dcd8d0; /* UPDATED */
+  color: #e4fc94; /* UPDATED */
   font-size: 2rem;
   margin-bottom: 1.5rem;
   border-bottom: 1px solid rgba(255,255,255,0.2);

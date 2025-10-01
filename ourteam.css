@@ -231,8 +231,8 @@ hr {
 }
 
 .team-member img {
-  width: 150px;
-  height: 150px;
+  width: 200px;
+  height: 200px;
   object-fit: cover;
   margin-bottom: 1rem;
   border: 3px solid #dcd8d0; /* UPDATED: Image border color now matches body text color */

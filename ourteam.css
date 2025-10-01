@@ -207,12 +207,12 @@ hr {
   justify-items: center;
 }
 
-/* --- NEW RULE FOR LEADERSHIP SECTION --- */
+/* --- LEADERSHIP GRID: Makes cards wider --- */
 .leadership-grid {
-  grid-template-columns: 1fr 1fr; /* Force 2 equal columns */
-  max-width: 800px; /* Limit the grid width */
+  grid-template-columns: 1fr 1fr;
+  max-width: 800px;
   margin-left: auto;
-  margin-right: auto; /* Center the grid */
+  margin-right: auto;
 }
 
 .team-member {
@@ -221,7 +221,7 @@ hr {
   border-radius: 12px;
   text-align: center;
   color: #dcd8d0;
-  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+  box-shadow: 0 44px 12px rgba(0, 0, 0, 0.15);
   transition: transform 0.2s ease, box-shadow 0.2s ease;
 }
 
@@ -235,7 +235,7 @@ hr {
   height: 150px;
   object-fit: cover;
   margin-bottom: 1rem;
-  border: 3px solid #e4fc94;
+  border: 3px solid #dcd8d0; /* UPDATED: Image border color now matches body text color */
 }
 
 .team-member h3 {

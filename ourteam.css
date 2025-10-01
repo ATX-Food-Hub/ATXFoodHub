@@ -224,8 +224,8 @@ hr {
 }
 
 .team-member img {
-  width: 120px;
-  height: 120px;
+  width: 150px;
+  height: 150px;
   object-fit: cover;
   border-radius: 50%;
   margin-bottom: 1rem;
@@ -235,7 +235,7 @@ hr {
 .team-member h3 {
   font-size: 1.2rem;
   margin-bottom: 0.25rem;
-  color: #dcd8d0; /* UPDATED */
+  color: #e4fc94; /* UPDATED */
 }
 
 .team-member p {

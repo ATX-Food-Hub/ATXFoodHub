@@ -69,15 +69,15 @@ body {
 }
 
 .nav-links li a {
-  color: #dcd8d0; /* UPDATED */
+  color: #e4fc94; /* UPDATED */
   font-weight: bold;
-  font-size: 1rem;
+  font-size: 0.9rem;
   text-decoration: none;
   transition: color 0.2s ease;
 }
 
 .nav-links li a:hover {
-  color: #c8c4bc; /* UPDATED hover color */
+  color: #c8e664; /* UPDATED hover color */
   text-decoration: underline;
 }
 

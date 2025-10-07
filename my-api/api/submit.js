@@ -9,7 +9,7 @@ export default async function handler(req, res) {
   
     if (req.method === "POST") {
       try {
-        const { name, email, message } = req.body;
+        const { name, email, organization, message } = req.body;
   
         const sheetURL = "https://script.google.com/macros/s/AKfycbzIKf2b0L9v8zHKIFrs-ejQ6iid4BkxgGpDzj17I5UuHlCffcahWAUg9U7RvGdfoYse/exec";
   

@@ -350,3 +350,22 @@ hr {
   }
 }
 
+/* Standalone form hyperlink */
+.form-link {
+  text-align: center;
+  margin-top: 1.5rem;
+  font-size: 1.05rem;
+}
+
+.form-link a {
+  color: #e4fc94;
+  font-weight: bold;
+  text-decoration: underline;
+  transition: color 0.2s ease;
+}
+
+.form-link a:hover {
+  color: #c8e664;
+}
+
+

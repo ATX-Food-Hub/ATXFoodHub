@@ -393,3 +393,39 @@ hr {
     height: 100px;
   }
 }
+
+/* Embedded Google Form section */
+.form-section {
+  background-color: rgba(121, 121, 121, 0.85);
+  border-radius: 15px;
+  padding: 2rem;
+  color: #dcd8d0;
+  box-shadow: 0 6px 18px rgba(0, 0, 0, 0.2);
+}
+
+.form-section h2 {
+  color: #e4fc94;
+  margin-bottom: 0.5rem;
+}
+
+.form-section p {
+  margin-bottom: 1.5rem;
+  font-size: 1.05rem;
+}
+
+.form-wrapper {
+  width: 100%;
+  overflow: hidden;
+  border-radius: 12px;
+}
+
+/* Mobile adjustments */
+@media (max-width: 576px) {
+  .form-section {
+    padding: 1.25rem;
+  }
+
+  .form-wrapper iframe {
+    height: 1100px;
+  }
+}

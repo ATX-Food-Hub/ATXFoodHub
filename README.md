@@ -9,11 +9,12 @@ ATX Food Hub is a student-led initiative using mapping, outreach, and research t
 
 2. Navigate to the project folder:
    cd ATX-Food-Hub
+   cd website
 
-3. Install dependencies:
+4. Install dependencies:
    npm install
 
-4. Run the app:
+5. Run the app:
    npm start
 
 

@@ -9,7 +9,7 @@ ATX Food Hub is a student-led initiative using mapping, outreach, and research t
    cd ATX-Food-Hub, if not already in project folder
 
 3. Navigate to the branch:
-   git branch maplibre
+   git switch maplibre
    cd website
 
 5. Install dependencies:

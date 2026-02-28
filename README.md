@@ -6,16 +6,17 @@ ATX Food Hub is a student-led initiative using mapping, outreach, and research t
 
 1. Clone the repo:
    git clone https://github.com/ATX-Food-Hub
+   cd ATX-Food-Hub, if not already in project folder
 
-2. Navigate to the project folder:
-   cd ATX-Food-Hub
+3. Navigate to the branch:
+   git branch maplibre
    cd website
 
-4. Install dependencies:
+5. Install dependencies:
    npm install
 
-5. Run the app:
-   npm start
+6. Run the app:
+   npm run dev
 
 
 ## Usage

@@ -1,8 +1,9 @@
 "use client";
 
-import { useEffect, useRef } from "react";
+import { useEffect, useRef, useState } from "react";
 import maplibregl from "maplibre-gl";
 import "maplibre-gl/dist/maplibre-gl.css";
+import { Eye, EyeOff } from "lucide-react";
 
 const LAYERS = [
     { id: "food-pantries", name: "Food Pantries", color: "#B22222" },
@@ -20,6 +21,19 @@ const LAYERS = [
 export default function MapComponent() {
     const mapContainer = useRef<HTMLDivElement>(null);
     const map = useRef<maplibregl.Map | null>(null);
+
+    //state to track which layers/resources are visible
+    //sets all layers to visible by default
+    const [visibleLayers, setVisibleLayers] = useState<Record<string, boolean>>(
+    Object.fromEntries(LAYERS.map(layer => [layer.id, true])));
+
+    //used to toggle visibility of layer/resource (turn it off or on)
+    const toggleLayer = (id: string) => {
+        setVisibleLayers(prev => ({
+            ...prev,
+            [id]: !prev[id]
+        }));
+    };
 
     useEffect(() => {
         if (!mapContainer.current) return;
@@ -112,18 +126,57 @@ export default function MapComponent() {
         };
     }, []);
 
+    //update map when layer visibility changes
+    useEffect(() => {
+        if (!map.current) return;
+    
+        for (const layer of LAYERS) {
+            const visibility = visibleLayers[layer.id] ? "visible" : "none";
+
+            if (map.current.getLayer(`${layer.id}-circle`)) {
+                map.current.setLayoutProperty(
+                    `${layer.id}-circle`,
+                    "visibility",
+                    visibility
+                );
+            }
+        }
+    }, [visibleLayers]);
+
+
     return (
         <div className="w-full h-full relative rounded-xl overflow-hidden shadow-lg border-2 border-primary/20">
             <div ref={mapContainer} className="w-full h-full" />
 
             {/* Legend */}
-            <div className="absolute top-4 right-4 bg-white/90 p-4 rounded-lg shadow-md text-black text-xs max-h-[80%] overflow-y-auto z-10 hidden sm:block">
-                <h4 className="font-bold mb-2 text-sm border-b pb-1">Map Legend</h4>
+            {/* <div className="absolute top-4 right-4 bg-white/90 p-4 rounded-lg shadow-md text-black text-xs max-h-[80%] overflow-y-auto z-10 hidden sm:block"> */}
+            <div className="absolute top-4 right-4 bg-white/90 p-4 rounded-lg shadow-md text-black text-xs max-h-[80%] overflow-y-auto z-10 block">
+                <h4 className="font-bold mb-2 text-sm border-b pb-1">Map Legend1</h4>
                 <div className="flex flex-col gap-2">
                     {LAYERS.map((layer) => (
-                        <div key={layer.id} className="flex items-center gap-2">
-                            <span className="w-3 h-3 rounded-full border border-black/20" style={{ backgroundColor: layer.color }}></span>
-                            <span>{layer.name}</span>
+                        <div
+                            key={layer.id}
+                            className="flex items-center justify-between gap-2 cursor-pointer hover:bg-gray-100 px-1 py-1 rounded"
+                            onClick={() => toggleLayer(layer.id)}
+                        >
+                            <div className="flex items-center gap-2">
+                                <span
+                                    className="w-3 h-3 rounded-full border border-black/20"
+                                    style={{ backgroundColor: layer.color }}
+                                ></span>
+                                <span>{layer.name}</span>
+                            </div>
+
+                            {/* <span className={visibleLayers[layer.id] ? "text-black" : "text-gray-400"}>
+                                {visibleLayers[layer.id] ? (
+                                    <Eye size={16} />
+                                ) : (
+                                    <EyeOff size={16} />
+                                )}
+                            </span> */}
+                            <span className={visibleLayers[layer.id] ? "text-black" : "text-gray-400"}>
+                                {visibleLayers[layer.id] ? "ON" : "OFF"}
+                            </span>
                         </div>
                     ))}
                 </div>

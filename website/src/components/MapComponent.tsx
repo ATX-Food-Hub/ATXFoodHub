@@ -79,16 +79,20 @@ export default function MapComponent() {
                         if (!e.features || !e.features[0]) return;
                         const feature = e.features[0];
                         const props = feature.properties as any;
+                        const lngLat = (e as any).lngLat;
 
-                        new maplibregl.Popup()
-                            .setLngLat((e as any).lngLat)
+                        // Pan map so popup blurb fits on screen
+                        map.current!.panTo(lngLat, { duration: 300 });
+
+                        new maplibregl.Popup({ maxWidth: "300px" })
+                            .setLngLat(lngLat)
                             .setHTML(`
-                <div class="p-2 text-black">
-                  <h3 class="font-bold text-lg border-b mb-2">${props.name || "Resource"}</h3>
-                  ${props.description ? `<p class="mb-2">${props.description}</p>` : ""}
-                  ${props.Address ? `<p class="text-sm"><b>Address:</b> ${props.Address}</p>` : ""}
-                  ${props.Hours ? `<p class="text-sm"><b>Hours:</b> ${props.Hours}</p>` : ""}
-                  ${props.Website ? `<p class="mt-2"><a href="${props.Website}" target="_blank" class="text-blue-600 underline">Website</a></p>` : ""}
+                <div style="font-family: Georgia, serif; color: #1a1a1a; padding: 4px 2px;">
+                  <h3 style="font-size: 1rem; font-weight: 700; border-bottom: 1px solid #ccc; padding-bottom: 6px; margin-bottom: 8px;">${props.name || "Resource"}</h3>
+                  ${props.description ? `<p style="font-size: 0.85rem; margin-bottom: 8px; line-height: 1.4;">${props.description}</p>` : ""}
+                  ${props.Address ? `<p style="font-size: 0.8rem; margin-bottom: 4px;"><strong>Address:</strong> ${props.Address}</p>` : ""}
+                  ${props.Hours ? `<p style="font-size: 0.8rem; margin-bottom: 8px;"><strong>Hours:</strong> ${props.Hours}</p>` : ""}
+                  ${props.Website ? `<p style="margin-top: 10px;"><a href="${props.Website}" target="_blank" rel="noopener noreferrer" style="display: inline-block; background-color: #e4fc94; color: #1a1a1a; font-family: Georgia, serif; font-size: 0.85rem; font-weight: 700; padding: 6px 14px; border-radius: 6px; text-decoration: none; border: 1.5px solid #c8e664; transition: background 0.2s;">Learn More →</a></p>` : ""}
                 </div>
               `)
                             .addTo(map.current!);

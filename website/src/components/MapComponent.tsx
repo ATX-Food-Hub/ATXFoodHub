@@ -1,8 +1,9 @@
 "use client";
 
-import { useEffect, useRef } from "react";
+import { useEffect, useRef, useState } from "react";
 import maplibregl from "maplibre-gl";
 import "maplibre-gl/dist/maplibre-gl.css";
+import { Eye, EyeOff } from "lucide-react";
 
 const LAYERS = [
     { id: "food-pantries", name: "Food Pantries", color: "#B22222" },
@@ -21,6 +22,20 @@ export default function MapComponent() {
     const mapContainer = useRef<HTMLDivElement>(null);
     const map = useRef<maplibregl.Map | null>(null);
 
+    //state to track which layers/resources are visible
+    //sets all layers to visible by default
+    const [visibleLayers, setVisibleLayers] = useState<Record<string, boolean>>(
+        Object.fromEntries(LAYERS.map(layer => [layer.id, true]))
+    );
+
+    //used to toggle visibility of layer/resource (turn it off or on)
+    const toggleLayer = (id: string) => {
+        setVisibleLayers(prev => ({
+            ...prev,
+            [id]: !prev[id]
+        }));
+    };
+
     useEffect(() => {
         if (!mapContainer.current) return;
 
@@ -37,15 +52,9 @@ export default function MapComponent() {
                         maxzoom: 19
                     }
                 },
-                layers: [
-                    {
-                        id: "osm",
-                        type: "raster",
-                        source: "osm"
-                    }
-                ]
+                layers: [{ id: "osm", type: "raster", source: "osm" }]
             },
-            center: [-97.7431, 30.2849], // UT Austin center
+            center: [-97.7431, 30.2849],
             zoom: 13,
         });
 
@@ -57,10 +66,7 @@ export default function MapComponent() {
                     const response = await fetch(`/data/${layer.id}.json`);
                     const data = await response.json();
 
-                    map.current.addSource(layer.id, {
-                        type: "geojson",
-                        data: data,
-                    });
+                    map.current.addSource(layer.id, { type: "geojson", data });
 
                     map.current.addLayer({
                         id: `${layer.id}-circle`,
@@ -87,14 +93,14 @@ export default function MapComponent() {
                         new maplibregl.Popup({ maxWidth: "300px" })
                             .setLngLat(lngLat)
                             .setHTML(`
-                <div style="font-family: Georgia, serif; color: #1a1a1a; padding: 4px 2px;">
-                  <h3 style="font-size: 1rem; font-weight: 700; border-bottom: 1px solid #ccc; padding-bottom: 6px; margin-bottom: 8px;">${props.name || "Resource"}</h3>
-                  ${props.description ? `<p style="font-size: 0.85rem; margin-bottom: 8px; line-height: 1.4;">${props.description}</p>` : ""}
-                  ${props.Address ? `<p style="font-size: 0.8rem; margin-bottom: 4px;"><strong>Address:</strong> ${props.Address}</p>` : ""}
-                  ${props.Hours ? `<p style="font-size: 0.8rem; margin-bottom: 8px;"><strong>Hours:</strong> ${props.Hours}</p>` : ""}
-                  ${props.Website ? `<p style="margin-top: 10px;"><a href="${props.Website}" target="_blank" rel="noopener noreferrer" style="display: inline-block; background-color: #e4fc94; color: #1a1a1a; font-family: Georgia, serif; font-size: 0.85rem; font-weight: 700; padding: 6px 14px; border-radius: 6px; text-decoration: none; border: 1.5px solid #c8e664; transition: background 0.2s;">Learn More →</a></p>` : ""}
-                </div>
-              `)
+                                    <div style="font-family: Georgia, serif; color: #1a1a1a; padding: 4px 2px;">
+                                      <h3 style="font-size: 1rem; font-weight: 700; border-bottom: 1px solid #ccc; padding-bottom: 6px; margin-bottom: 8px;">${props.name || "Resource"}</h3>
+                                      ${props.description ? `<p style="font-size: 0.85rem; margin-bottom: 8px; line-height: 1.4;">${props.description}</p>` : ""}
+                                      ${props.Address ? `<p style="font-size: 0.8rem; margin-bottom: 4px;"><strong>Address:</strong> ${props.Address}</p>` : ""}
+                                      ${props.Hours ? `<p style="font-size: 0.8rem; margin-bottom: 8px;"><strong>Hours:</strong> ${props.Hours}</p>` : ""}
+                                      ${props.Website ? `<p style="margin-top: 10px;"><a href="${props.Website}" target="_blank" rel="noopener noreferrer" style="display: inline-block; background-color: #e4fc94; color: #1a1a1a; font-family: Georgia, serif; font-size: 0.85rem; font-weight: 700; padding: 6px 14px; border-radius: 6px; text-decoration: none; border: 1.5px solid #c8e664; transition: background 0.2s;">Learn More →</a></p>` : ""}
+                                    </div>
+                                  `)
                             .addTo(map.current!);
                     });
 
@@ -111,27 +117,46 @@ export default function MapComponent() {
             }
         });
 
-        return () => {
-            map.current?.remove();
-        };
+        return () => { map.current?.remove(); };
     }, []);
 
-    return (
-        <div className="w-full h-full relative rounded-xl overflow-hidden shadow-lg border-2 border-primary/20">
-            <div ref={mapContainer} className="w-full h-full" />
+        //update map when layer visibility changes
+        useEffect(() => {
+            if (!map.current) return;
+            for (const layer of LAYERS) {
+                const visibility = visibleLayers[layer.id] ? "visible" : "none";
+                if (map.current.getLayer(`${layer.id}-circle`)) {
+                    map.current.setLayoutProperty(`${layer.id}-circle`, "visibility", visibility);
+                }
+            }
+        }, [visibleLayers]);
 
-            {/* Legend */}
-            <div className="absolute top-4 right-4 bg-white/90 p-4 rounded-lg shadow-md text-black text-xs max-h-[80%] overflow-y-auto z-10 hidden sm:block">
-                <h4 className="font-bold mb-2 text-sm border-b pb-1">Map Legend</h4>
-                <div className="flex flex-col gap-2">
-                    {LAYERS.map((layer) => (
-                        <div key={layer.id} className="flex items-center gap-2">
-                            <span className="w-3 h-3 rounded-full border border-black/20" style={{ backgroundColor: layer.color }}></span>
-                            <span>{layer.name}</span>
-                        </div>
-                    ))}
+        return (
+            <div className="w-full h-full relative rounded-xl overflow-hidden shadow-lg border-2 border-primary/20">
+                <div ref={mapContainer} className="w-full h-full" />
+                <div className="absolute top-4 right-4 bg-white/90 p-4 rounded-lg shadow-md text-black text-xs max-h-[80%] overflow-y-auto z-10 block">
+                    <h4 className="font-bold mb-2 text-sm border-b pb-1">Map Legend</h4>
+                    <div className="flex flex-col gap-2">
+                        {LAYERS.map((layer) => (
+                            <div
+                                key={layer.id}
+                                className="flex items-center justify-between gap-2 cursor-pointer hover:bg-gray-100 px-1 py-1 rounded"
+                                onClick={() => toggleLayer(layer.id)}
+                            >
+                                <div className="flex items-center gap-2">
+                                    <span
+                                        className="w-3 h-3 rounded-full border border-black/20"
+                                        style={{ backgroundColor: layer.color }}
+                                    ></span>
+                                    <span>{layer.name}</span>
+                                </div>
+                                <span style={{ color: visibleLayers[layer.id] ? "black" : "gray", marginLeft: "8px" }}>
+                                    {visibleLayers[layer.id] ? <Eye size={16} /> : <EyeOff size={16} />}
+                                </span>
+                            </div>
+                        ))}
+                    </div>
                 </div>
             </div>
-        </div>
-    );
-}
+        );
+    }

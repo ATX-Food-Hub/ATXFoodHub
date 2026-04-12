@@ -15,7 +15,7 @@ export default function Navbar() {
     { name: "PROJECTS", href: "/projects" },
     { name: "PARTNERSHIPS", href: "/partnerships" },
     { name: "OUR TEAM", href: "/our-team" },
-    { name: "APPLY NOW", href: "/apply-now" },
+    // { name: "APPLY NOW", href: "/apply-now" },
     { name: "MAILING LIST", href: "/mailing-list" },
   ];
 

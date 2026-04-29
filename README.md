@@ -1,43 +1,36 @@
-# ATXFoodHub.github.io
+This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
 
-ATX Food Hub is a student-led initiative using mapping, outreach, and research to improve food access in Austin.
+## Getting Started
 
-## Installation
+First, run the development server:
 
-1. Clone the repo:
-   git clone https://github.com/ATX-Food-Hub/ATXFoodHub.git
-   cd ATXFoodHub, if not already in project folder
+```bash
+npm run dev
+# or
+yarn dev
+# or
+pnpm dev
+# or
+bun dev
+```
 
-3. Navigate to the branch:
-   git switch maplibre
-   cd website
+Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
 
-2. Navigate to the project folder:
-   cd ATXFoodHub
+You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
 
-5. Install dependencies:
-   npm install
+This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
 
-6. Run the app:
-   npm run dev
+## Learn More
 
+To learn more about Next.js, take a look at the following resources:
 
-## Usage
+- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
+- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
 
-Use our form to share food access updates, garden resources, and more. Look at the calendar for upcoming events, and add locations using the form link.
+You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
 
-## Built With
-- HTML, CSS
+## Deploy on Vercel
 
-## Contributing
-Pull requests are welcome. For major changes, please open an issue first to discuss what you’d like to change.
+The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
 
-Make sure to update tests as appropriate.
-
-## Author
-
-Contact at: atxfoodhub@gmail.com
-
-
-
-
+Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.

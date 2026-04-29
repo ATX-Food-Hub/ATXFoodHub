@@ -49,7 +49,7 @@ export default function Home() {
       <hr className="border-white/10" />
 
       <section className="form-section bg-[#797979]/85 p-8 rounded-2xl shadow-xl flex flex-col gap-4">
-        <h2 className="text-primary text-3xl font-bold">Apply Now</h2>
+        {/* <h2 className="text-primary text-3xl font-bold">Apply Now</h2> */}
         <p className="text-text-secondary text-lg">
           All applications due January 31st.
         </p>

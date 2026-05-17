@@ -124,7 +124,6 @@ export default function MapComponent() {
                                       ${props.description ? `<p style="font-size: 0.85rem; margin-bottom: 8px; line-height: 1.4;">${props.description}</p>` : ""}
                                       ${props.Address ? `<p style="font-size: 0.8rem; margin-bottom: 4px;"><strong>Address:</strong> ${props.Address}</p>` : ""}
                                       ${props.Hours ? `<p style="font-size: 0.8rem; margin-bottom: 8px;"><strong>Hours:</strong> ${props.Hours}</p>` : ""}
-                                      ${props.Website ? `<p style="margin-top: 10px;"><a href="${props.Website}" target="_blank" rel="noopener noreferrer" style="display: inline-block; background-color: #e4fc94; color: #1a1a1a; font-family: Georgia, serif; font-size: 0.85rem; font-weight: 700; padding: 6px 14px; border-radius: 6px; text-decoration: none; border: 1.5px solid #c8e664; transition: background 0.2s;">Learn More →</a></p>` : ""}
                                     </div>
                                   `)
                             .addTo(map.current!);

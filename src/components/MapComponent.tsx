@@ -1,6 +1,6 @@
 "use client";
 
-import { useEffect, useRef, useState } from "react";
+import { useCallback, useEffect, useRef, useState } from "react";
 import maplibregl from "maplibre-gl";
 import "maplibre-gl/dist/maplibre-gl.css";
 import { Eye, EyeOff, X } from "lucide-react";
@@ -17,6 +17,7 @@ const LAYERS = [
     { id: "family-food-support", name: "Food Support for Families", color: "#FFDEAD" },
     { id: "seed-libraries", name: "Seed Libraries", color: "#A9A9A9" },
 ];
+
 
 export default function MapComponent() {
     const mapContainer = useRef<HTMLDivElement>(null);
@@ -38,6 +39,26 @@ export default function MapComponent() {
             [id]: !prev[id]
         }));
     };
+
+    // Fetches fresh GeoJSON for all layers and updates existing sources in-place.
+    // Uses cache: 'no-store' so browsers never serve stale data files.
+    const refreshLayerData = useCallback(async () => {
+        if (!map.current) return;
+        await Promise.all(
+            LAYERS.map(async (layer) => {
+                try {
+                    const url = `/api/layers/${layer.id}`;
+                    const response = await fetch(url, { cache: "no-store" });
+                    if (!response.ok) return;
+                    const data = await response.json();
+                    const source = map.current?.getSource(layer.id) as maplibregl.GeoJSONSource | undefined;
+                    if (source) source.setData(data);
+                } catch (error) {
+                    console.error(`Error refreshing layer ${layer.id}:`, error);
+                }
+            })
+        );
+    }, []);
 
     useEffect(() => {
         if (!mapContainer.current) return;
@@ -66,7 +87,9 @@ export default function MapComponent() {
 
             for (const layer of LAYERS) {
                 try {
-                    const response = await fetch(`/data/${layer.id}.json`);
+                    const url = `/api/layers/${layer.id}`;
+                    const response = await fetch(url, { cache: "no-store" });
+                    if (!response.ok) continue;
                     const data = await response.json();
 
                     map.current.addSource(layer.id, { type: "geojson", data });
@@ -123,6 +146,14 @@ export default function MapComponent() {
         return () => { map.current?.remove(); };
     }, []);
 
+    useEffect(() => {
+        const handleVisibilityChange = () => {
+            if (document.visibilityState === "visible") refreshLayerData();
+        };
+        document.addEventListener("visibilitychange", handleVisibilityChange);
+        return () => document.removeEventListener("visibilitychange", handleVisibilityChange);
+    }, [refreshLayerData]);
+
         //update map when layer visibility changes
         useEffect(() => {
             if (!map.current) return;
@@ -141,18 +172,7 @@ export default function MapComponent() {
 
             {/* Learn More Button */}
             <button
-
-                //open panel when button is clicked, or close it if it's already open
-                onClick={() => {
-
-                    if (panelOpen) {
-                        setPanelOpen(false);
-                    }
-                    else {
-                        setPanelOpen(true);
-                    }
-                }}
-
+                onClick={() => setPanelOpen(prev => !prev)}
                 style={{
                     position: "absolute",
                     bottom: "155px",

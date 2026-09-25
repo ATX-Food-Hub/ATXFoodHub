@@ -3,6 +3,7 @@
 import { useState } from "react";
 import Link from "next/link";
 import Image from "next/image";
+import { trackEvent } from "@/lib/analytics";
 
 export default function Navbar() {
   const [isOpen, setIsOpen] = useState(false);
@@ -50,7 +51,10 @@ export default function Navbar() {
             <Link
               href={link.href}
               className="nav-link"
-              onClick={() => setIsOpen(false)}
+              onClick={() => {
+                if (link.href.startsWith("http")) trackEvent("outbound_click", { link_name: link.name });
+                setIsOpen(false);
+              }}
               target={link.href.startsWith("http") ? "_blank" : undefined}
             >
               {link.name}

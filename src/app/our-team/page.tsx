@@ -13,8 +13,6 @@ const TEAM = [
         members: [
             { name: "Adya Chawda", role: "Co-lead", major: "Neuroscience", funFact: "I know four languages.", image: "/bio/adya2.jpeg" },
             { name: "Aleesha Kumar", role: "Co-lead", major: "Public Health", funFact: "I enjoy photography, gardening, and watching movies and shows.", image: "/bio/aleesha.jpeg" },
-            { name: "Min Bao", role: "Member", major: "Neuroscience", funFact: "I've learned six instruments in my free time and am looking for more!", image: "/bio/monica.jpeg" },
-            { name: "Snigdha Patlola", role: "Member", major: "Neuroscience", funFact: "I have a scar on my forehead from running into a wall!", image: "/bio/snigdha (1).jpeg" },
             { name: "Sriya Tanguturi", role: "Member", major: "Public Health", funFact: "I've pet an elephant before!", image: "/bio/sriya.jpeg" },
         ]
     },
@@ -22,6 +20,7 @@ const TEAM = [
         category: "Research Committee",
         members: [
             { name: "Aasritha Senagapally", role: "Lead", major: "Biochemistry", funFact: "I love to read! Currently, my fixation is murder mystery.", image: "/bio/aasritha.jpeg" },
+            { name: "Min Bao", role: "Member", major: "Neuroscience", funFact: "I've learned six instruments in my free time and am looking for more!", image: "/bio/monica.jpeg" },
         ]
     },
     {
@@ -29,6 +28,7 @@ const TEAM = [
         members: [
             { name: "Isha Jannu", role: "Co-Lead", major: "Computer Science", funFact: "I love cafe hopping and finding new favorite sweet treats!", image: "/bio/isha.jpeg" },
             { name: "Jose Gurrola", role: "Co-Lead", major: "Computer Science", funFact: "I have seen over 500 movies.", image: "/bio/jose.jpeg" },
+            { name: "Natalie Funes", role: "Member", major: "Medical Lab Science", funFact: "I have seen all of Degrassi.", image: "/bio/natalie.jpg" },
         ]
     }
 ];

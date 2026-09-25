@@ -5,7 +5,7 @@ const TEAM = [
         category: "Leadership",
         members: [
             { name: "Siva Epuri", role: "President", major: "Public Health", funFact: "I love spending time outdoors.", image: "/bio/siva (1).jpeg" },
-            { name: "Aryianah Wilson", role: "Vice President", major: "Computer Science", funFact: "I love writing spoken word poetry.", image: "/bio/aryianah (1).jpeg" },
+            { name: "Aryianah Wilson", role: "Vice President", major: "Computer Science", funFact: "I love writing spoken word poetry.", image: "/bio/aryianah.jpg" },
         ]
     },
     {

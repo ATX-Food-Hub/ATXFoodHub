@@ -27,8 +27,8 @@ const TEAM = [
     {
         category: "Map Improvement Committee",
         members: [
-            { name: "Isha Jannu", role: "Lead", major: "Computer Science", funFact: "I love cafe hopping and finding new favorite sweet treats!", image: "/bio/isha.jpeg" },
-            { name: "Mehal Kanhere", role: "Member", major: "Electrical & Computer Engineering", funFact: "I love going hiking and camping.", image: "/bio/mehal.jpeg" },
+            { name: "Isha Jannu", role: "Co-Lead", major: "Computer Science", funFact: "I love cafe hopping and finding new favorite sweet treats!", image: "/bio/isha.jpeg" },
+            { name: "Jose Gurrola", role: "Co-Lead", major: "Computer Science", funFact: "I have seen over 500 movies.", image: "/bio/jose.jpeg" },
         ]
     }
 ];

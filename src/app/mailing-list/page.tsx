@@ -2,6 +2,7 @@
 
 import { useState, useRef } from "react";
 import emailjs from "@emailjs/browser";
+import { trackEvent } from "@/lib/analytics";
 
 export default function MailingList() {
     const form = useRef<HTMLFormElement>(null);
@@ -22,6 +23,7 @@ export default function MailingList() {
             'x2p6VxuzNBiHpLrux'
         )
             .then(() => {
+                trackEvent("mailing_list_signup");
                 setResponse({ type: "success", message: "✓ Success! You've been added to our mailing list." });
                 form.current?.reset();
             })

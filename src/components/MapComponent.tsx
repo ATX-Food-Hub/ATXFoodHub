@@ -4,6 +4,7 @@ import { useCallback, useEffect, useRef, useState } from "react";
 import maplibregl from "maplibre-gl";
 import "maplibre-gl/dist/maplibre-gl.css";
 import { Eye, EyeOff, X } from "lucide-react";
+import { trackEvent } from "@/lib/analytics";
 
 const LAYERS = [
     { id: "food-pantries", name: "Food Pantries", color: "#B22222" },
@@ -34,6 +35,7 @@ export default function MapComponent() {
 
     //used to toggle visibility of layer/resource (turn it off or on)
     const toggleLayer = (id: string) => {
+        trackEvent("map_layer_toggle", { layer: id, now_visible: !visibleLayers[id] });
         setVisibleLayers(prev => ({
             ...prev,
             [id]: !prev[id]
@@ -113,6 +115,12 @@ export default function MapComponent() {
                         const props = feature.properties as any;
                         const lngLat = (e as any).lngLat;
 
+                        // Record which resource was opened, so we can see what people look for most
+                        trackEvent("map_resource_click", {
+                            layer: layer.id,
+                            resource_name: props.name || "Unknown",
+                        });
+
                         // Pan map so popup blurb fits on screen
                         map.current!.panTo(lngLat, { duration: 300 });
 
@@ -171,7 +179,10 @@ export default function MapComponent() {
 
             {/* Learn More Button */}
             <button
-                onClick={() => setPanelOpen(prev => !prev)}
+                onClick={() => {
+                    if (!panelOpen) trackEvent("map_learn_more_open");
+                    setPanelOpen(prev => !prev);
+                }}
                 style={{
                     position: "absolute",
                     bottom: "155px",

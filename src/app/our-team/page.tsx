@@ -22,6 +22,7 @@ const TEAM = [
         members: [
             { name: "Aasritha Senagapally", role: "Lead", major: "Biochemistry", funFact: "I love to read! Currently, my fixation is murder mystery.", image: "/bio/aasritha.jpeg" },
             { name: "Min Bao", role: "Member", major: "Neuroscience", funFact: "I've learned six instruments in my free time and am looking for more!", image: "/bio/monica.jpeg" },
+            { name: "Sriya Badireddi", role: "Member", major: "Public Health", funFact: "I do Indian classical dance/Bharatanatyam!", image: "/bio/sriyab.jpeg" }
         ]
     },
     {

@@ -32,7 +32,7 @@ const TEAM = [
             { name: "Jose Gurrola", role: "Co-Lead", major: "Computer Science", funFact: "I have seen over 500 movies.", image: "/bio/jose.jpeg" },
             { name: "Natalie Funes", role: "Member", major: "Medical Lab Science", funFact: "I have seen all of Degrassi.", image: "/bio/natalie.jpg" },
             { name: "Shreedevi Mallapuram", role: "Member", major: "Architecture", funFact: "I love to travel! So far, my family and I have visited 46 states all by road tripping!", image: "/bio/shreedevi.png" },
-            { name: "Kevin Le", role: "Member", major: "Computer Science", funFact: "I am deaf in my left ear!", image: "/bio/kevin.png" }
+            { name: "Kevin Le", role: "Member", major: "Computer Science", funFact: "I am deaf in my left ear!", image: "/bio/kevin.jpg" }
         ]
     }
 ];

@@ -14,6 +14,7 @@ const TEAM = [
             { name: "Adya Chawda", role: "Co-lead", major: "Neuroscience", funFact: "I know four languages.", image: "/bio/adya2.jpeg" },
             { name: "Aleesha Kumar", role: "Co-lead", major: "Public Health", funFact: "I enjoy photography, gardening, and watching movies and shows.", image: "/bio/aleesha.jpeg" },
             { name: "Sriya Tanguturi", role: "Member", major: "Public Health", funFact: "I've pet an elephant before!", image: "/bio/sriya.jpeg" },
+            { name: "Vianney Medellin", role: "Member", major: "Marketing", funFact: "I love collecting stickers and stamps!", image: "/bio/vianney.jpeg" }
         ]
     },
     {

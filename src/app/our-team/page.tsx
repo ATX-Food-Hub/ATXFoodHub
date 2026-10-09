@@ -31,7 +31,8 @@ const TEAM = [
             { name: "Isha Jannu", role: "Co-Lead", major: "Computer Science", funFact: "I love cafe hopping and finding new favorite sweet treats!", image: "/bio/isha.jpeg" },
             { name: "Jose Gurrola", role: "Co-Lead", major: "Computer Science", funFact: "I have seen over 500 movies.", image: "/bio/jose.jpeg" },
             { name: "Natalie Funes", role: "Member", major: "Medical Lab Science", funFact: "I have seen all of Degrassi.", image: "/bio/natalie.jpg" },
-            { name: "Shreedevi Mallapuram", role: "Member", major: "Architecture", funFact: "I love to travel! So far, my family and I have visited 46 states all by road tripping!", image: "/bio/shreedevi.png" }
+            { name: "Shreedevi Mallapuram", role: "Member", major: "Architecture", funFact: "I love to travel! So far, my family and I have visited 46 states all by road tripping!", image: "/bio/shreedevi.png" },
+            { name: "Kevin Le", role: "Member", major: "Computer Science", funFact: "I am deaf in my left ear!", image: "/bio/kevin.png" }
         ]
     }
 ];
